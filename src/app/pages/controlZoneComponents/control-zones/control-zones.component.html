@@ -1,0 +1,65 @@
+<app-three-layer-layout>
+  <app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+  <div class="heading">Control Zones</div>
+  <div class="card">
+    <div class="card-body">
+      <!-- <mat-icon
+      class="icon"
+        aria-hidden="false"
+        aria-label="Example add icon"
+        fontIcon="+"
+        (click)="createZone()"
+      ></mat-icon> -->
+    </div>
+    <div class="card1" fxFill>
+      <div class="card-body1">
+        <br />
+        <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Radius</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let zone of result  ">
+              <td>{{ zone.name }}</td>
+              <td>{{ zone.lat }}</td>
+              <td>{{ zone.lng }}</td>
+              <td>{{ zone.radius }}</td>
+              <td>
+                <button
+                  class="btn1"
+                  (click)="zoneDetails(zone.control_zone_id,zone.lat,zone.lng,zone.name,zone.radius,zone.color)"
+                  class="btn btn-outline-info me-2"
+                >
+                  <mat-icon aria-label="edit icon" fontIcon="info"></mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <nav class="page">
+            <ul class="pagination">
+              <li class="page-item" [class.disabled]="page===1">
+                <a class="page-link" (click)="previousPage()">Previous</a>
+              </li>
+              <li class="page-item">
+                <span class="page-link">
+                  Page {{page}} of {{totalPages}}
+                </span>
+              </li>
+              <li class="page-item">
+                <a class="page-link" (click)="nextPage()">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-three-layer-layout>

@@ -1,0 +1,95 @@
+<app-tag-three-layer-layout>
+    <h1 class="heading">Register Asset</h1>
+    <form class="form1" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">RFID_LABEL:</label>
+                    <input class="form-control" type="text" formControlName="name" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">SERNR:</label>
+                    <input class="form-control" type="text" formControlName="itemSerialNumber" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">TXT50:</label>
+                    <input class="form-control" type="text" formControlName="itemDescription" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">Purchase Date:</label>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="datepicker" placeholder="Select a date" formControlName="purchaseDate" [readonly]="true" />
+                        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">Purchase Price:</label>
+                    <input class="form-control" type="number" formControlName="purchasePrice" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">Category:</label>
+                    <select  class="form-control" formControlName="itemTypeId" aria-label="Select Item Type">
+                        <option value>Select Item Type</option>
+                        <option *ngFor="let itemType of itemTypes" [value]="itemType.itemTypeId">{{ itemType.CategoryName }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">Condition:</label>
+                    <select  class="form-control" formControlName="itemConditionId" aria-label="Select Item Condition">
+                        <option value>Select Item Condition</option>
+                        <option *ngFor="let itemCondition of itemConditions" [value]="itemCondition.itemConditionId">{{ itemCondition.ConditionName }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">CLASS_DESCRIPTION:</label>
+                    <select  class="form-control" formControlName="itemBrandId" aria-label="Select Item Brand">
+                        <option value>Select Item Brand</option>
+                        <option *ngFor="let itemBrand of itemBrands" [value]="itemBrand.itemBrandId">{{ itemBrand.BrandName }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">Item location:</label>
+                    <select  class="form-control" formControlName="locationId" aria-label="Select Item Location">
+                        <option value>Select Item floor</option>
+                        <option *ngFor="let location of locations" [value]="location.locationId">{{ location.locationName }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">Disposal:</label>
+                    <select  class="form-control" formControlName="disposalId" aria-label="Select Item Disposal">
+                        <option value>Select Item Disposal</option>
+                        <option *ngFor="let disposal of disposal" [value]="disposal.disposalId">{{ disposal.disposalName }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+            
+        <button type="button" (click)="onSubmit()" class="btn1 btn-primary">Submit</button>
+    </form>
+    
+</app-tag-three-layer-layout>

@@ -1,0 +1,19 @@
+export const environment = {
+    production:true,
+<<<<<<< HEAD
+    AdminServerUrl: 'https://asset.purplewire.co.za/sp-admin/',
+    PreyServerUrl :'https://asset.purplewire.co.za/sp-preyws/',
+    LaravelGates :'https://asset.purplewire.co.za/sp-mw/',
+    PreyFrontend:'https://asset.purplewire.co.za/sp-preyfe/',
+=======
+    AdminServerUrl: 'http://localhost:8082/',
+    PreyServerUrl :'http://localhost:8085/',
+    LaravelGates :'http://localhost/sp-mw/',
+    PreyFrontend:'http://localhost:8081/',
+>>>>>>> acc773cb0362e1becaf78ff9e5543105bcdce3e8
+    Map: {
+          accessToken: 'pk.eyJ1IjoibmVvemEiLCJhIjoiY2xvZnkwOTRiMHh1YTJrcndmam82em42aSJ9.DAxTwxCFRRjQ_BZ7y4ODgw',
+          centerLat: -26.20588864284071,
+          centerLng:  28.04367165035994,
+    }
+};

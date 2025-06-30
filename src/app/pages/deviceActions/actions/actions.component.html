@@ -1,0 +1,111 @@
+<div class="card">
+    <div class="card-body">
+        <div class="header">
+            <h2>Actions</h2>
+        </div>
+        <!-- <form [formGroup]="actionsForm"> -->
+        <div>
+            <button mat-button class="btn btn-light me-2" (click)="alarmButton()">Alarm</button>
+            <button mat-button class="btn btn-light me-2" (click)="alertButton()">Alert</button>
+            <button mat-button class="btn btn-light me-2" (click)="lockButton()">Lock</button>
+            <button mat-button class="btn btn-light me-2" (click)="missingButton()">Missing</button>
+
+        </div>
+        <br>
+        <div *ngIf="alarm; else alarmDetails">
+
+        </div>
+        <!-- <br> -->
+        <div *ngIf="alert; else alertDetails">
+
+        </div>
+        <!-- <br> -->
+        <div *ngIf="lock; else lockDetails">
+
+        </div>
+        <!-- <br> -->
+        <div *ngIf="missing; else missingDetails">
+
+        </div>
+        <br>
+        <div class="mat-dialog-actions">
+            <button class="mat-raised-button" class="btn btn-outline-primary me-2" mat-button
+                (click)="cancel()">Cancel</button>
+            <button mat-button [mat-dialog-close]="true" class="btn btn-success" (click)="onSubmit()">Submit</button>
+        </div>
+        <!-- </form> -->
+    </div>
+</div>
+
+<ng-template #alarmDetails>
+    <div class="me-5 mt-3">
+        <mat-form-field class="dropdown">
+          <mat-label>Sound</mat-label>
+          <mat-select [(value)]="selectedSound">
+            <mat-option *ngFor="let sound of sounds" [value]="sound">
+              {{sound}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    <br>
+    <div class="me-5 mt-3">
+        <mat-form-field class="dropdown">
+            <mat-label>Context</mat-label>
+            <mat-select [(value)]="selectedContext">
+                <mat-option *ngFor="let item of items" [value]="item">
+                    {{item}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</ng-template>
+
+<ng-template #alertDetails>
+    <div class="mb-4 mt-3">
+        <label for="message" class="form-label me-2">Message:</label>
+        <input matInput type="text" [(ngModel)]="message" placeholder="type arlet message">
+    </div>
+    <br>
+    <div class="me-5 mt-3">
+        <mat-form-field class="dropdown">
+            <mat-label>Context</mat-label>
+            <mat-select [(value)]="selectedContext">
+                <mat-option *ngFor="let item of items" [value]="item">
+                    {{item}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</ng-template>
+
+<ng-template #lockDetails>
+    <div class="mb-4 mt-3">
+        <label for="password" class="form-label me-2">Password:</label>
+        <input matInput type="password" [(ngModel)]="password" placeholder="enter unlock password">
+    </div>
+    <br>
+    <div class="me-5 mt-3">
+        <mat-form-field class="dropdown">
+            <mat-label>Context</mat-label>
+            <mat-select [(value)]="selectedContext">
+                <mat-option *ngFor="let item of items" [value]="item">
+                    {{item}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</ng-template>
+
+<ng-template #missingDetails>
+    <div class="me-5 mt-3">
+        <mat-form-field class="dropdown">
+            <mat-label>Context</mat-label>
+            <mat-select [(value)]="selectedContext">
+                <mat-option *ngFor="let item of items" [value]="item">
+                    {{item}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</ng-template>

@@ -1,0 +1,106 @@
+.match-parent {
+    width: 100%;
+    height: 700px;
+  }
+  
+  .sp-map {
+    display: inline-block;
+    position: sticky;
+    top: 0;
+    width: 33%; /* Default to 1/3 width on large screens */
+    height: 100vh;
+    z-index: 0;
+    vertical-align: top;
+  }
+  
+  #sp-map-container {
+    background-color: lightgreen;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .mapboxgl-canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .myMapWrapper {
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For medium devices (tablets and up to large desktops) */
+  @media (max-width: 1024px) {
+    .sp-map {
+      width: 50%; /* Make the map take up 50% width on medium-sized screens */
+      height: 50vh; /* Set the height to 50vh to avoid too large map */
+    }
+  
+    #sp-map-container {
+      background-color: lightgreen;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  
+    .mapboxgl-canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  /* For small devices (phones and smaller tablets) */
+  @media (max-width: 768px) {
+    .sp-map {
+      width: 100%; /* Make the map take up the full width on small screens */
+      height: 60vh; /* Limit the map height to 60% of the viewport */
+    }
+  
+    #sp-map-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  
+    .mapboxgl-canvas {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .myMapWrapper {
+      height: auto; /* Allow wrapper to shrink for small devices */
+      width: 100%;
+    }
+  }
+  
+  /* For extra small devices (phones in portrait mode) */
+  @media (max-width: 480px) {
+    .sp-map {
+      width: 100%; /* Take up full width */
+      height: 50vh; /* Adjust the height further to fit on small screens */
+    }
+  
+    .myMapWrapper {
+      height: auto; /* Allow wrapper to shrink */
+      width: 100%;
+    }
+  
+    #sp-map-container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+  
+    .mapboxgl-canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  

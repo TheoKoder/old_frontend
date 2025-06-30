@@ -1,0 +1,43 @@
+.laptop-form {
+  margin: 6 7 10px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+
+  
+}
+.laptop-form label {
+  color: black;
+}
+.error {
+  color: red;
+  font-size: 0.875rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.form-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-buttons {
+  grid-column: span 2;
+  text-align: right;
+  margin-top: 20px;
+}
+
+

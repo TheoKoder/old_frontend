@@ -1,0 +1,41 @@
+<app-admin-three-layer-layout>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-3 mb-lg-5">
+                <div class="position-relative card table-nowrap table-card">
+                    <div class="card-header align-items-center">
+                        <h1 class="mb-0">CLASS_DESCRIPTION</h1>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="small text-uppercase bg-body text-muted">
+                                <tr>
+                                  <th *ngFor="let header of itemBrandsHeaders">{{ header }}</th>
+                                  <th>Update</th>
+                                    <th>Delete</th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="align-middle" *ngFor="let item of itemBrands">
+                                  <td *ngFor="let header of itemBrandsHeaders">{{ item[header] }}</td>
+                                  <td>
+                                    <button class="btn1" (click)="update(item.itemBrandId)"type="button"
+                                      class="btn btn-outline-info me-2">
+                                      <mat-icon aria-label="info icon" fontIcon="info"></mat-icon>
+                                    </button>
+                                  </td>
+                                  <td>
+                                      <button class="btn1" (click)="delete(item.itemBrandId)"type="button"
+                                        class="btn btn-outline-info me-2">
+                                        <mat-icon aria-label="info icon" fontIcon="warning" class="red-icon"></mat-icon>
+                                      </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-admin-three-layer-layout>

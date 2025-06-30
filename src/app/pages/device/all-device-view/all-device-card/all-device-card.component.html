@@ -1,0 +1,62 @@
+
+<div class="card">
+
+    <div class="card-header">
+        <div class="container">
+            <img src="\assets\logo\laptop-icon.jpg" alt="Image Description"
+                class="icon-lg bg-primary rounded-3 text-white"/>
+        </div>
+
+        <h4 class="card-title">{{ TheDevices.name }}</h4>
+
+    </div>
+
+    <div class="card-body">
+
+
+
+        <div class="details">
+      
+                    <mat-list>
+                       
+                        
+                      
+                        <h3>OS</h3>
+                        <h5>{{TheDevices.os_details.os}}</h5>
+                        <mat-divider></mat-divider>
+                    
+                        <h3>Description</h3>
+                        <h5>{{ TheDevices.description }}</h5>
+                        <mat-divider></mat-divider>
+                   
+                        <h3>Missing</h3>
+                        <h5>{{TheDevices.missing}}</h5>
+                        <mat-divider></mat-divider>
+                     
+                        <h3>Client Outdated</h3>
+                        <h5>{{TheDevices.client_outdated}}</h5>
+                    </mat-list>
+
+               
+
+
+
+        </div>
+        <div class="card-footer">
+
+            <div class="col">
+                <button class="btn-col" type="button"
+                    class="btn btn-outline-info me-2">
+                    <mat-icon aria-label="info icon" fontIcon="info"></mat-icon>
+                </button>
+               
+            </div>
+           
+
+
+
+
+
+        </div>
+    </div>
+</div>

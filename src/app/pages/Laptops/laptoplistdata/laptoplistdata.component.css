@@ -1,0 +1,249 @@
+.laptop-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: inherit;
+  padding: 3px;
+}
+.laptop-form .searchBar {
+  width: 19rem;
+  align-items: center;
+  max-width: 500px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.laptop-form .searchBar input {
+  width: 100%;
+  padding: 2px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);
+}
+.laptop-form .searchButton {
+  grid-column: span 2;
+  padding: 5px 10px;
+  font-size: 15px;
+  margin-top: 0.4em;
+  margin-left: 120px;
+  align-items: center;
+  border-radius: 45px;
+  background-color: rgb(18, 6, 193);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.laptop-form .searchButton:active {
+  transform: scale(0.9);
+}
+.laptop-form .searchButton:hover {
+  background-color: blue;
+}
+.laptop-form .error {
+  color: red;
+}
+.laptop-form .active {
+  padding: 13px;
+  font-size: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(2, 29, 203, 0.2);
+}
+.laptop-form .form-grid {
+  margin: 5, 5, 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 7px;
+  max-width: 950px;
+  width: 100%;
+}
+.laptop-form .form-grid div {
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.laptop-form .form-grid div small {
+  font-weight: bold;
+  font-size: x-small;
+  position: relative;
+}
+.laptop-form .form-grid label {
+  margin-bottom: 5px;
+  font-size: small;
+  font-weight: bold;
+}
+.laptop-form .form-grid input {
+  padding: 3px;
+  font-size: 17px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(4, 34, 229, 0.2);
+}
+.laptop-form .submit-button {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.laptop-form .submit-button button {
+  padding: 9px 15px;
+  font-size: 12px;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgb(18, 6, 193);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.laptop-form .submit-button button:active {
+  transform: scale(0.9);
+}
+.laptop-form .submit-button button:hover {
+  background-color: blue;
+}
+.laptop-form .rest-button {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.laptop-form .rest-button button {
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: rgb(18, 6, 193);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.laptop-form .rest-button button:active {
+  transform: scale(0.9);
+}
+.laptop-form .rest-button button:hover {
+  background-color: blue;
+}
+@media (max-width: 5000px) {
+  .laptop-form .searchBar {
+    width: 100vh;
+    align-items: center;
+    justify-items: center;
+    max-width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+  .laptop-form .searchBar input {
+    width: 50%;
+    padding: 2px;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);
+  }
+  .laptop-form .searchButton {
+    grid-column: span 2;
+    padding: 2px 14px;
+    font-size: 10px;
+    margin-top: 0.4em;
+    margin-left: 10px;
+    align-items: center;
+    border-radius: 45px;
+    background-color: rgb(18, 6, 193);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .laptop-form .searchButton:active {
+    transform: scale(0.9);
+  }
+  .laptop-form .searchButton:hover {
+    background-color: blue;
+  }
+  .laptop-form .error {
+    color: red;
+  }
+  .laptop-form .active {
+    padding: 2px 5px;
+    font-size: 6px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(2, 29, 203, 0.2);
+  }
+  .laptop-form .form-grid {
+    margin: 0, 0, auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(3.5em, 1fr));
+    gap: 9px;
+    max-width: 100%;
+    width: 350px;
+  }
+  .laptop-form .form-grid div {
+    display: flex;
+    flex-direction: column-reverse;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .laptop-form .form-grid div small {
+    font-weight: bold;
+    font-size: xx-small;
+    position: relative;
+  }
+  .laptop-form .form-grid label {
+    margin-bottom: 10px;
+    font-size: xx-small;
+    font-weight: 500;
+  }
+  .laptop-form .form-grid input {
+    padding: 1px 9px;
+    font-size: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(4, 34, 229, 0.2);
+  }
+  .laptop-form .submit-button {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .laptop-form .submit-button button {
+    padding: 4px 6px;
+    font-size: 12px;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(18, 6, 193);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .laptop-form .submit-button button:active {
+    transform: scale(0.9);
+  }
+  .laptop-form .submit-button button:hover {
+    background-color: blue;
+  }
+  .laptop-form .rest-button {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .laptop-form .rest-button button {
+    padding: 4px 7px;
+    font-size: 12px;
+    border-radius: 6px;
+    background-color: rgb(18, 6, 193);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .laptop-form .rest-button button:active {
+    transform: scale(0.9);
+  }
+  .laptop-form .rest-button button:hover {
+    background-color: blue;
+  }
+}/*# sourceMappingURL=laptoplistdata.component.css.map */

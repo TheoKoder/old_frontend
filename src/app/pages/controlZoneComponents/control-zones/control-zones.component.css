@@ -1,0 +1,37 @@
+.heading {
+  position: relative;
+  top: 10px;
+  color: black;
+  font-size: 30px;
+}
+
+.card {
+  position: relative;
+  margin-top: 28px;
+}
+
+.card-body {
+  position: relative;
+  height: 10px;
+}
+
+.page {
+  position: relative;
+  top: 16px;
+}
+
+.page-link {
+  color: #000;
+  background-color: transparent;
+}
+
+.icon {
+  margin-left: 93%;
+}
+
+.card-body1 {
+  position: relative;
+  /* justify-content: center; */
+  left: 15px;
+  width: 98%;
+}/*# sourceMappingURL=control-zones.component.css.map */

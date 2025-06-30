@@ -1,0 +1,40 @@
+.red-icon {
+  color: red; /* Set the color to red */
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.title {
+  position: relative;
+  margin-top: 40px;
+  margin-left: 535px;
+}
+
+.tag-table {
+  position: relative;
+  margin-top: 42px;
+}
+
+.text {
+  color: black;
+}
+
+.btn2 {
+  height: 45px;
+  width: 122px;
+  position: relative;
+  left: 11px;
+}/*# sourceMappingURL=tag-data-table.component.css.map */

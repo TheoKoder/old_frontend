@@ -1,0 +1,104 @@
+<app-admin-three-layer-layout>
+
+  <div class="container"> All Devices</div>
+  <app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+  <div class="container1">
+    <mat-card class="small-card">
+      <mat-card-content>
+        <mat-card-title>Search by Laptop Information</mat-card-title>
+        <mat-card-content>
+          <!-- <mat-grid-list cols="2" rowHeight="5:3">
+            <mat-grid-tile> -->
+          <mat-form-field appearance="outline" style="width: 300px;">
+            <mat-label>Serial Number:</mat-label>
+            <input matInput [(ngModel)]="serialNumber">
+          </mat-form-field>
+          <!-- </mat-grid-tile>
+          </mat-grid-list> -->
+        </mat-card-content>
+        <mat-card-actions>
+          <button (click)="performDeviceSearch()">Search</button>
+          <button (click)="AllDevices()">Get All</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+    <div class="button-container">
+      <div class="row">
+        <div class="col">
+
+        </div>
+        <!-- <div class="col-2">
+              <button class="btn btn-info" (click)="generatePdf()">
+                Generate PDF
+              </button>
+            </div> -->
+        <div class="col-1">
+
+        </div>
+      </div>
+
+
+    </div>
+    <div *ngIf="view; else grid">
+      <div class="row">
+        <div class="col" *ngFor="let device of result">
+          <app-all-device-card (click)="deviceDetails(device.id)" [TheDevices]="device"></app-all-device-card>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <ng-template #grid>
+    <div class="card">
+      <div class="card-body">
+        <button type="button" class="download-btn" (click)="generateCsv()">
+          <img src="assets/logo/icons8-excel-24.png" alt="Download Icon">
+        </button>
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead class="small text-uppercase bg-body text-muted">
+              <tr>
+                <th *ngFor="let header of Headers">{{ header }}</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="align-middle" *ngFor="let item of result">
+                <td *ngFor="let header of Headers">{{ item[header] }}</td>
+                
+               <td>
+                  <button class="btn1" (click)="deviceDetails(item.SERIAL_NUMBER)" type="button"
+                    class="btn btn-outline-info me-2">
+                    <mat-icon aria-label="info icon" fontIcon="info"></mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <nav class="page">
+            <ul class="pagination">
+              <li class="page-item" [class.disabled]="page === 1">
+                <a class="page-link" (click)="previousPage()">Previous</a>
+              </li>
+              <li class="page-item">
+                <span class="page-link">
+                  Page {{ page }} of {{ totalPages }}
+                </span>
+              </li>
+              <li class="page-item">
+                <a class="page-link" (click)="nextPage()">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+
+</app-admin-three-layer-layout>

@@ -1,0 +1,77 @@
+.login {
+  width: 900px;
+  height: 100vh;
+  margin: 10 10 auto;         // Center the login form horizontally
+  padding: 50px;
+
+  // For medium screens (tablets)
+  @media (max-width: 768px) {
+    width: 90%;  // Use a percentage width to take up most of the screen on medium devices
+    height: auto; // Let height adjust based on content
+  }
+
+  // For small screens (phones)
+  @media (max-width: 550px) {
+    width: 100%; // Full width on small devices
+    height: 100vh;    
+    padding: 10px;  // Reduce padding for mobile screens
+  }
+
+  .ui-grid {
+    margin: 10px 0;
+
+    .ui-grid-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+
+      .ui-grid-col-2 {
+        width: 20%;  // Default column width for larger screens
+        padding: 0 10px;
+      }
+
+      .ui-grid-col-6 {
+        width: 60%;  // Default column width for larger screens
+        padding: 0 10px;
+      }
+
+      .ui-grid-col-4 {
+        width: 20%;  // Default column width for larger screens
+        padding: 0 10px;
+      }
+
+      // Adjust for medium screens (tablets)
+      @media (max-width: 768px) {
+        .ui-grid-col-2, .ui-grid-col-6, .ui-grid-col-4 {
+          width: 100%;  // Stack the columns on smaller devices
+          padding: 5px;
+        }
+      }
+
+      // Adjust for small screens (phones)
+      @media (max-width: 550px) {
+        .ui-grid-col-2, .ui-grid-col-6, .ui-grid-col-4 {
+          width: 100%;  // Stack the columns on very small devices
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  // Form Controls Styling
+  input.form-control {
+    width: 100%;  // Ensure inputs take up full width
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .alert {
+    font-size: 0.8rem;  // Reduce font size for error messages on smaller devices
+  }
+
+  button {
+    width: 100%;  // Make the button span the full width of the form on mobile
+    padding: 10px;
+    font-size: 1rem;
+  }
+}

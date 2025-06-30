@@ -1,0 +1,139 @@
+<app-three-layer-layout>
+  <app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+  <div>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Daily Exception Reports</mat-card-title>
+        <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label class="text">Date :</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="selectedDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="btn1" (click)="DateSearch()">Search</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Map View</mat-card-title>
+        <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+      </mat-card-header>
+      @if (this.isMap){
+      <mat-card-content>
+        <sp-map #spmap [mapData]=this.mapData></sp-map>
+      </mat-card-content>
+      }
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <div class="container">
+          <mat-card-title>Device Daily Exception Report</mat-card-title>
+          <div class="fill"></div>
+          <div><button mat-raised-button (click)="locationAnalysis()" [disabled]="(this.notFoundDevices.length==0)"
+              matTooltip="Analyse Locations for Not Located Devices">
+              <mat-icon >accessibility</mat-icon>
+            </button>
+            <button type="button" class="download-btn ml-auto" (click)="downloadReport()"
+              [disabled]="(this.notFoundDevices.length==0)" matTooltip="Download Table as CSV File">
+              <span class="material-icons">
+                file_download
+                </span>
+            </button>
+          </div>
+        </div>
+        <mat-card-title></mat-card-title>
+
+      </mat-card-header>
+      <mat-card-actions>
+
+
+      </mat-card-actions>
+      <mat-card-content>
+        <table class="table mb-0 table-nowrap table-card">
+          <thead class="small text-uppercase bg-body text-muted">
+            <tr>
+              <th *ngFor="let header of Headers">{{ header }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-middle" *ngFor="let item of notFoundDevices">
+              <td *ngFor="let header of Headers">{{ item[header] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</app-three-layer-layout>
+<!-- 
+  <app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+  <div class="container" style="overflow: hidden;">
+    <mat-card class="small-card">
+      <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="11:3">
+          <mat-grid-tile>
+            <mat-label class="text">Date :</mat-label>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="selectedDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <div>
+          <button class="btn1" (click)="DateSearch()">Search</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    
+    <sp-map #spmap [mapData]=this.mapData></sp-map>
+    
+
+    <div class="row">
+      <div class="col-12 mb-3 mb-lg-5">
+        <div class="position-relative card table-nowrap table-card">
+          <div class="card-header align-items-center">
+            <h1 class="mb-0">Device Daily Exception Report</h1>
+            <button mat-raised-button (click)="locationAnalysis()" [disabled]="(this.notFoundDevices.length==0)"
+              matTooltip="Analysis Locations for Not Located Devices">
+              <mat-icon>accessibility</mat-icon>
+            </button>
+            <button type="button" class="download-btn ml-auto" (click)="downloadReport()"
+              [disabled]="(this.notFoundDevices.length==0)" matTooltip="Download Table as CSV File">
+              <img src="assets/logo/icons8-excel-24.png" alt="Download Icon">
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="table mb-0">
+              <thead class="small text-uppercase bg-body text-muted">
+                <tr>
+                  <th *ngFor="let header of Headers">{{ header }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="align-middle" *ngFor="let item of notFoundDevices">
+                  <td *ngFor="let header of Headers">{{ item[header] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+<!-- <button type="button" class="download-btn" [disabled]="(this.notFoundDevices.length==0)" (click)="locationAnalysis()">
+  Location Analysis
+</button>
+<button type="button" class="download-btn" [disabled]="(this.notFoundDevices.length==0)" (click)="downloadReport()">
+  <img src="assets/logo/icons8-excel-24.png" alt="Download Icon">
+</button> -->

@@ -1,0 +1,26 @@
+<!--Left-menu.component.html-->
+<!--Hamburger menu-->
+<div>
+  <button class="hamburger" (click)="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+  </button>
+  <span class="menu-title"></span>
+</div>
+
+<!--SideNav-->
+<div 
+class="sideNav" 
+[class.open]="menuOpen" 
+fxLayout="column" 
+fxFill>
+  <app-tree-view [treeData]="treeData"></app-tree-view>
+</div>
+
+<!--Backdrop for overlay Effect-->
+
+<div class="backdrop"
+*ngIf="menuOpen"
+(click)="toggleMenu()">
+</div>

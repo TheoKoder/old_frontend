@@ -1,0 +1,63 @@
+.example-tree {
+  max-width: 100%;
+  font-family: Arial, sans-serif;
+
+  // Default styles for the tree
+  .mat-tree-node, 
+  .mat-nested-tree-node {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(0, 0, 255, 0.1); // Highlight node on hover
+    }
+
+    .mat-icon {
+      margin-right: 8px; // Add spacing between icon and text
+    }
+  }
+
+  .example-tree-invisible {
+    display: none;
+  }
+
+  // Collapsible group container
+  [role="group"] {
+    margin-left: 20px;
+    border-left: 1px solid #ccc; // Add visual distinction for nested nodes
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .example-tree {
+    .mat-tree-node, 
+    .mat-nested-tree-node {
+      padding: 8px 12px; // Reduce padding for smaller screens
+      font-size: 14px; // Adjust font size for readability
+
+      .mat-icon {
+        margin-right: 4px; // Reduce spacing on small screens
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .example-tree {
+    overflow-x: auto; // Allow horizontal scrolling for long names or deep nesting
+
+    .mat-tree-node, 
+    .mat-nested-tree-node {
+      font-size: 12px; // Further reduce font size
+      padding: 6px 8px; // Minimize padding
+    }
+
+    .mat-icon {
+      font-size: 16px; // Adjust icon size for smaller screens
+    }
+  }
+}

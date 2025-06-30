@@ -1,0 +1,68 @@
+.floor-select-container {
+  position: relative;
+  left: 288px;
+  bottom: 27px;
+}
+
+.download-container {
+  position: relative;
+  left: 407px;
+  bottom: 52px;
+}
+
+.container {
+  overflow: hidden;
+}
+
+input[type=text] {
+  width: 150px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.text {
+  color: #000;
+}
+
+.page {
+  position: relative;
+  top: 16px;
+}
+
+.page-link {
+  color: #000;
+  background-color: transparent;
+}
+
+.small-card {
+  width: 500px;
+  margin: 10px;
+}
+
+.text {
+  color: #000;
+}
+
+.btn1 {
+  width: 100%;
+}
+
+.download-btn {
+  margin-left: auto;
+}
+
+.card-header {
+  display: flex;
+}
+
+.small-card {
+  width: 400px;
+  margin: 10px;
+}
+
+.scroll {
+  width: 145px;
+}/*# sourceMappingURL=existing-tags.component.css.map */

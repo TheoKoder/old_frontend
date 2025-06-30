@@ -1,0 +1,7 @@
+<app-three-layer-layout>
+    <!-- <app-progress-bar [isLoading]="isLoading"></app-progress-bar> -->
+    <!-- <div id="map"></div> -->
+    @if (this.isMap){
+        <sp-map #spmap [mapData]=this.mapData></sp-map>
+    }
+</app-three-layer-layout>

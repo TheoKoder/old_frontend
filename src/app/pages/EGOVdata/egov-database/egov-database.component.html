@@ -1,0 +1,141 @@
+<app-three-layer-layout>
+    <div class = "container">E-Gov Database</div>  
+
+    <input [(ngModel)]="SearchParams"
+placeholder="Search" style="position: relative;
+margin-left: 874px; bottom: 15px;"/>
+<button class="button" style="position: relative;
+bottom: 15px;" (click)="search()">search</button>
+    <div class="card">
+        <div class="card-body">
+          <br>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                  <th>ANLKL</th>
+                  <th>BUKRS</th>
+                  <th>INVNR</th>
+                  <th>SERNR</th>
+                  <th>TXT50</th>
+                  <th>INVZU</th>
+                  <th>INKEN</th>
+                  <th>STORT</th>
+                  <th>RAUMN</th>
+                  <th>PERNR</th>
+                  <th>GEBER</th>
+                  <th>KOSTL</th>
+                  <th>FKBER</th>
+                  <th>ORD41</th>
+                  <th>ORD42</th>
+                  <th>ORD43</th>
+                  <th>ORD44</th>
+                  <th>GDLGRP</th>
+                  <th>WERKS</th>
+                  <th>Vendor</th>
+                  <th>Class_Description</th>
+                  <th>EAUFN</th>
+                  <th>AKTIV</th>
+                  <th>ANBTR01</th>
+                  <th>ANBTR02</th>
+                  <th>VerifiedDate</th>
+                  <th>Verified</th>
+                  <th>Notes</th>
+                  <th>VerifiedBy</th>
+                  <th>CapturedDate</th>
+                  <th>Approve</th>
+                  <th>XHIST</th>
+                  <th>IVDAT</th>
+                  <th>CAUFN</th>
+                  <th>BarCode</th>
+                  <th>Allocate</th>
+                  <th>newAsset</th>
+                  <th>IsDisposed</th>
+                  <th>RFID_Label</th>
+                  <th>Serial_No_2</th>
+                  <th>Invoice_Number</th>
+                  <th>Site_Name</th>
+                  <th>Department</th>
+                  <th>Site_Address</th>
+                  <th>Contact_Details</th>
+                  <th>Relocated_Asssets</th>
+                  <th>Replaced_Old_Tag</th>
+                  <th>GBN_Normal_asset</th>
+                  <th>warranty</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let device of LaptopData">
+                  <td>{{ device.anlkl }}</td>
+                  <td>{{ device.bukrs }}</td>
+                  <td>{{ device.invnr }}</td>
+                  <td>{{ device.sernr }}</td>
+                  <td>{{ device.txt50 }}</td>
+                  <td>{{ device.invzu }}</td>
+                  <td>{{ device.inken }}</td>
+                  <td>{{ device.stort }}</td>
+                  <td>{{ device.raumn }}</td>
+                  <td>{{ device.pernr }}</td>
+                  <td>{{ device.geber }}</td>
+                  <td>{{ device.kostl }}</td>
+                  <td>{{ device.fkber }}</td>
+                  <td>{{ device.ord41 }}</td>
+                  <td>{{ device.ord42 }}</td>
+                  <td>{{ device.ord43 }}</td>
+                  <td>{{ device.ord44 }}</td>
+                  <td>{{ device.gdlgrp }}</td>
+                  <td>{{ device.werks }}</td>
+                  <td>{{ device.vendor }}</td>
+                  <td>{{ device.class_Description }}</td>
+                  <td>{{ device.eaufn }}</td>
+                  <td>{{ device.aktiv }}</td>
+                  <td>{{ device.anbtr01 }}</td>
+                  <td>{{ device.anbtr02 }}</td>
+                  <td>{{ device.verifiedDate }}</td>
+                  <td>{{ device.verified }}</td>
+                  <td>{{ device.notes }}</td>
+                  <td>{{ device.verifiedBy }}</td>
+                  <td>{{ device.capturedDate }}</td>
+                  <td>{{ device.approve }}</td>
+                  <td>{{ device.xhist }}</td>
+                  <td>{{ device.ivdat }}</td>
+                  <td>{{ device.caufn }}</td>
+                  <td>{{ device.barCode }}</td>
+                  <td>{{ device.allocate }}</td>
+                  <td>{{ device.newAsset }}</td>
+                  <td>{{ device.isDisposed }}</td>
+                  <td>{{ device.rfid_Label }}</td>
+                  <td>{{ device.serial_No_2 }}</td>
+                  <td>{{ device.invoice_Number }}</td>
+                  <td>{{ device.site_Name }}</td>
+                  <td>{{ device.department }}</td>
+                  <td>{{ device.site_Address }}</td>
+                  <td>{{ device.contact_Details }}</td>
+                  <td>{{ device.relocated_Asssets }}</td>
+                  <td>{{ device.replaced_Old_Tag }}</td>
+                  <td>{{ device.gbn_Normal_asset }}</td>
+                  <td>{{ device.warranty }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <nav class="page-nav">
+              <ul class="pagination">
+                <li class="page-item" [class.disabled]="page===1">
+                  <a class="page-link" (click)="previousPage()">Previous</a>
+                </li>
+                <li class="page-item">
+                  <span class="page-link">
+                    Page {{page}} of {{totalPages}}
+                  </span>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" (click)="nextPage()">Next</a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+        </div>
+      </div>
+  
+
+  </app-three-layer-layout>

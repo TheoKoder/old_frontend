@@ -1,0 +1,64 @@
+.login {
+  width: 900px;
+  height: 100vh;
+  margin: 10 10 auto;
+  padding: 50px;
+}
+@media (max-width: 768px) {
+  .login {
+    width: 90%;
+    height: auto;
+  }
+}
+@media (max-width: 550px) {
+  .login {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+  }
+}
+.login .ui-grid {
+  margin: 10px 0;
+}
+.login .ui-grid .ui-grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.login .ui-grid .ui-grid-row .ui-grid-col-2 {
+  width: 20%;
+  padding: 0 10px;
+}
+.login .ui-grid .ui-grid-row .ui-grid-col-6 {
+  width: 60%;
+  padding: 0 10px;
+}
+.login .ui-grid .ui-grid-row .ui-grid-col-4 {
+  width: 20%;
+  padding: 0 10px;
+}
+@media (max-width: 768px) {
+  .login .ui-grid .ui-grid-row .ui-grid-col-2, .login .ui-grid .ui-grid-row .ui-grid-col-6, .login .ui-grid .ui-grid-row .ui-grid-col-4 {
+    width: 100%;
+    padding: 5px;
+  }
+}
+@media (max-width: 550px) {
+  .login .ui-grid .ui-grid-row .ui-grid-col-2, .login .ui-grid .ui-grid-row .ui-grid-col-6, .login .ui-grid .ui-grid-row .ui-grid-col-4 {
+    width: 100%;
+    padding: 5px;
+  }
+}
+.login input.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+.login .alert {
+  font-size: 0.8rem;
+}
+.login button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}/*# sourceMappingURL=login.component.css.map */

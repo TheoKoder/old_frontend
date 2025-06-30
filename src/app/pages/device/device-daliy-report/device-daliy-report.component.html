@@ -1,0 +1,59 @@
+<app-three-layer-layout>
+  <app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+  <div>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Daily Device Reports</mat-card-title>
+        <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label class="text">Date :</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="selectedDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="DateSearch()">Search</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Daily Device Records</mat-card-title>
+        <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <table class="table mb-0 table-nowrap">
+          <thead class="small text-uppercase bg-body text-muted">
+            <tr>
+              <th *ngFor="let header of Headers">{{ header }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-middle" *ngFor="let item of result">
+              <td *ngFor="let header of Headers">{{ item[header] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card-content>
+      <mat-card-actions>
+        <nav class="page">
+          <ul class="pagination">
+            <li class="page-item" [class.disabled]="page===1">
+              <a class="page-link" (click)="previousPage()">Previous</a>
+            </li>
+            <li class="page-item">
+              <span class="page-link">
+                Page {{page}} of {{totalPages}}
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" (click)="nextPage()">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</app-three-layer-layout>

@@ -1,0 +1,127 @@
+<div class="container" style="height: 450px; width: 400px;">
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">
+                {{systemData.name}}
+            </h4>
+        </div>
+        <div class="card-body">
+            <mat-list>
+                <h3>Serial Number</h3>
+                <h5>{{systemData.data[0].serial_number}}</h5>
+                <hr>
+                <h3>UUID</h3>
+                <h5>{{ systemData.data[1].uuid }}</h5>
+                <hr>
+                <h3>Bios Vendor</h3>
+                <h5>{{systemData.data[2].bios_vendor}}</h5>
+                <hr>
+                <h3>Bios Version</h3>
+                <h5>{{systemData.data[3].bios_version}}</h5>
+            </mat-list>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">
+                {{motherboardData.name}}
+            </h4>
+        </div>
+        <div class="card-body">
+            <mat-list>
+                <h3>Motherboard Vendor</h3>
+                <h5>{{motherboardData.data[0].mb_vendor}}</h5>
+                <hr>
+                <h3>Motherboard Model</h3>
+                <h5>{{motherboardData.data[1].mb_model}}</h5>
+                <hr>
+                <h3>Motherboard Version</h3>
+                <h5>{{motherboardData.data[2].mb_version}}</h5>
+                <hr>
+                <h3>Motherboard Serial</h3>
+                <h5>{{motherboardData.data[3].mb_serial}}</h5>
+            </mat-list>
+
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">
+                {{cpuData.name}}
+            </h4>
+        </div>
+        <div class="card-body">
+            <mat-list>
+                <h3>CPU Model</h3>
+                <h5>{{cpuData.data[0].cpu_model}}</h5>
+                <hr>
+                <h3>CPU Speed</h3>
+                <h5>{{ cpuData.data[1].cpu_speed }}</h5>
+                <hr>
+                <h3>CPU Cores</h3>
+                <h5>{{cpuData.data[2].cpu_cores}}</h5>
+            </mat-list>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">
+                {{ramData.name}}
+            </h4>
+        </div>
+        <div class="card-body">
+            <mat-list>
+                <h3>RAM Size</h3>
+                <h5>{{ramData.data[0].ram_size}}</h5>
+            </mat-list>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">
+                {{networkInterfaceData.name}}
+            </h4>
+        </div>
+        <div class="card-body">
+            <mat-list>
+                <h3>Name</h3>
+                <h5>{{networkInterfaceData.data[0].name}}</h5>
+                <hr>
+                <h3>Model</h3>
+                <h5>{{networkInterfaceData.data[1].model}}</h5>
+                <hr>
+                <h3>Vendor</h3>
+                <h5>{{networkInterfaceData.data[2].vendor}}</h5>
+                <hr>
+                <h3>Mac Address</h3>
+                <h5>{{networkInterfaceData.data[3].mac_address}}</h5>
+                <hr>
+                <h3>Interface Type</h3>
+                <h5>{{networkInterfaceData.data[4].interface_type}}</h5>
+                <!-- <mat-divider></mat-divider>
+                <h3>Model</h3>
+                <h5>{{networkInterfaceData.data[1].model}}</h5>
+                <mat-divider></mat-divider>
+                <h3>Vendor</h3>
+                <h5>{{networkInterfaceData.data[2].vendor}}</h5>
+                <mat-divider></mat-divider>
+                <h3>Mac Address</h3>
+                <h5>{{networkInterfaceData.data[3].mac_address}}</h5> -->
+            </mat-list>
+
+        </div>
+    </div>
+</div>

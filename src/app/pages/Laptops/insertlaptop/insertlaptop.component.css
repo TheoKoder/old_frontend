@@ -1,0 +1,90 @@
+.laptop-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  margin-top: -15px;
+}
+.laptop-form .active {
+  padding: 13px;
+  font-size: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(2, 29, 203, 0.2);
+}
+.laptop-form .form-grid {
+  margin: 5, 5, 6px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  max-width: 1000px;
+  width: 100%;
+}
+.laptop-form .form-grid div {
+  display: flex;
+  flex-direction: column;
+}
+.laptop-form .form-grid div small {
+  font-weight: bold;
+  font-size: x-small;
+  position: relative;
+}
+.laptop-form .form-grid label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.laptop-form .form-grid input {
+  padding: 3px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(4, 34, 229, 0.2);
+}
+.laptop-form .error {
+  color: red;
+}
+.laptop-form .submit-button {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.laptop-form .submit-button button {
+  padding: 9px 15px;
+  font-size: 12px;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgb(18, 6, 193);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.laptop-form .submit-button button:active {
+  transform: scale(0.9);
+}
+.laptop-form .submit-button button:hover {
+  background-color: blue;
+}
+.laptop-form .rest-button {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.laptop-form .rest-button button {
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: rgb(18, 6, 193);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.laptop-form .rest-button button:active {
+  transform: scale(0.9);
+}
+.laptop-form .rest-button button:hover {
+  background-color: blue;
+}/*# sourceMappingURL=insertlaptop.component.css.map */

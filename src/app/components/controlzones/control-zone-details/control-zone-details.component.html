@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h2>{{ details.name }} Details</h2>
+      <br />
+      <p>Latitude: {{ details.lat }}</p>
+      <p>Longitude: {{ details.lng }}</p>
+      <!-- <app-control-zone-map></app-control-zone-map> -->
+      <sp-map [mapData]=this.mapData></sp-map>
+
+      <!-- Devices Table -->
+      <div class="container">
+        <div class="div1">
+          <h2>Devices</h2>
+          <table class="table table-bordered table-hover table-striped">
+          <!-- <table mat-table class="mat-elevation-z8"> -->
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr *ngFor="let device of devices | paginate: { id: 'zone_pagination', itemsPerPage: 5, currentPage: page, totalItems: totalRecords }"> -->
+              <tr *ngFor="let device of devices">
+                <td>{{ device.id }}</td>
+                <td>{{ device.name }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <div>
+            <pagination-controls id="device_pagination" (pageChange)="page = $event"></pagination-controls>
+          </div> -->
+        </div>
+
+        <!-- Actions Table -->
+        <div class="div3">
+          <h2>Event</h2>
+          <table class="table table-bordered table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let action of actions">
+                <td>{{ action.context }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <br />
+
+        <!-- Actions Details Table -->
+        <div class="div3">
+          <h2>Actions</h2>
+          <table class="table table-bordered table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let action of actions">
+                <td>{{ action.action_name }}</td>
+                <td>{{ action.options | json }}</td> <!-- Use JSON pipe to display complex objects -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.example-tree {
+  max-width: 100%;
+  font-family: Arial, sans-serif;
+}
+.example-tree .mat-tree-node,
+.example-tree .mat-nested-tree-node {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.example-tree .mat-tree-node:hover,
+.example-tree .mat-nested-tree-node:hover {
+  background-color: rgba(0, 0, 255, 0.1);
+}
+.example-tree .mat-tree-node .mat-icon,
+.example-tree .mat-nested-tree-node .mat-icon {
+  margin-right: 8px;
+}
+.example-tree .example-tree-invisible {
+  display: none;
+}
+.example-tree [role=group] {
+  margin-left: 20px;
+  border-left: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+  .example-tree .mat-tree-node,
+  .example-tree .mat-nested-tree-node {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .example-tree .mat-tree-node .mat-icon,
+  .example-tree .mat-nested-tree-node .mat-icon {
+    margin-right: 4px;
+  }
+}
+@media (max-width: 480px) {
+  .example-tree {
+    overflow-x: auto;
+  }
+  .example-tree .mat-tree-node,
+  .example-tree .mat-nested-tree-node {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  .example-tree .mat-icon {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=tree-view.component.css.map */

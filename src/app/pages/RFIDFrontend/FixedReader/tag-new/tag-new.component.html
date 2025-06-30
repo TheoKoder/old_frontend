@@ -1,0 +1,68 @@
+<app-tag-three-layer-layout>
+    <div class="container">
+      <mat-card class="small-card">
+        <mat-card-content>
+          <mat-grid-list cols="2" rowHeight="8:3" >
+            <mat-grid-tile class="tile">
+              <mat-label class="title">Select a Date :</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile class="tile">
+              <input [matDatepicker]="picker"[(ngModel)]="selectedDate" >
+              <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker></mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+        <div>
+          <button class="btn1" (click)="DateSearch()">Search</button>
+        </div>
+        <div>
+          <button class="btn1" (click)="resetSearch()">Reset</button>
+        </div>
+      </mat-card>
+      
+        <div class="row">
+            <div class="col-12 mb-3 mb-lg-5">
+                <div class="position-relative card table-nowrap table-card">
+                    <div class="card-header">
+                        <h1 class="mb-0">New Tags</h1>
+                        <button type="button" class="download-btn" [disabled]="!isDataAvailable" (click)="downloadReport()">
+                          <img src="assets/logo/icons8-excel-24.png" alt="Download Icon">
+                      </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="small text-uppercase bg-body text-muted">
+                                <tr>
+                                  <th *ngFor="let header of tagNewHeaders">{{ header }}</th>
+                        
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="align-middle" *ngFor="let item of tagNewReport">
+                                  <td *ngFor="let header of tagNewHeaders">{{ item[header] }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page">
+                      <nav class="page-nav">
+                        <ul class="pagination">
+                          <li class="page-item" [class.disabled]="page===1">
+                            <a class="page-link" (click)="previousPage()">Previous</a>
+                          </li>
+                          <li class="page-item">
+                            <span class="page-link">
+                              Page {{page}} of {{totalPages}}
+                            </span>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" (click)="nextPage()">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-tag-three-layer-layout>

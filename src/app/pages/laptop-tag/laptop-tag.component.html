@@ -1,0 +1,18 @@
+
+  <app-three-layer-layout>
+<div class="card-container">
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label for="tagName">Tag Name:</mat-label>
+          <input matInput type="text" id="tagName" [(ngModel)]="tagName" name="tagName" required>
+        </mat-form-field>
+        <button type="submit" mat-flat-button color="primary">Add Tag</button>
+      </form>
+    </mat-card-header>
+  </mat-card>
+</div>
+  </app-three-layer-layout>
+
+

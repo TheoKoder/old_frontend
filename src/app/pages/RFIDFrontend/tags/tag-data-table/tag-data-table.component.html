@@ -1,0 +1,194 @@
+<app-admin-three-layer-layout>
+    <mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selectedTable">
+          <mat-option>None</mat-option>
+          <mat-option value="itemTypes">Category</mat-option>
+            <mat-option value="itemConditions">Conditions</mat-option>
+            <mat-option value="itemBrands">Brands</mat-option>
+            <mat-option value="locations">Location</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    <div class="card" *ngIf="selectedTable === 'itemTypes' && itemTypes">
+        <div class="card-body">
+            <h1>Category</h1>
+          <br>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th *ngFor="let header of itemTypesHeaders">{{ header }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of itemTypes">
+                <td *ngFor="let header of itemTypesHeaders">{{ item[header] }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <!-- <nav class="page-nav">
+              <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                  <a class="page-link" (click)="previousPage()">Previous</a>
+                </li>
+                <li class="page-item">
+                  <span class="page-link">
+                    Page {{currentPage}} 
+                  </span>
+                </li>
+                <li class="page-item ">
+                  <button class="page-link" (click)="nextPage()" [class.disabled]="!hasNextPage">Next</button>
+                </li>
+              </ul>
+            </nav> -->
+          </div>
+        </div>
+      </div> 
+    
+    <div class="card" *ngIf="selectedTable === 'itemConditions' && itemConditions">
+        <div class="card-body">
+            <h1>Condition</h1>
+          <br>
+          <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th *ngFor="let header of itemConditionsHeaders">{{ header }}</th>
+                  </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of itemConditions">
+                <td>{{ item.itemConditionName }}</td>
+                <td>
+                  <button class="btn1" (click)="update(item.itemTypeId)"type="button"
+                    class="btn btn-outline-info me-2">
+                    <mat-icon aria-label="info icon" fontIcon="info"></mat-icon>
+                  </button>
+                </td>
+                <td>
+                    <button class="btn1" (click)="delete(item.itemTypeId)"type="button"
+                      class="btn btn-outline-info me-2">
+                      <mat-icon aria-label="info icon" fontIcon="warning" class="red-icon"></mat-icon>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <!-- <nav class="page-nav">
+              <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                  <a class="page-link" (click)="previousPage()">Previous</a>
+                </li>
+                <li class="page-item">
+                  <span class="page-link">
+                    Page {{currentPage}} 
+                  </span>
+                </li>
+                <li class="page-item ">
+                  <button class="page-link" (click)="nextPage()" [class.disabled]="!hasNextPage">Next</button>
+                </li>
+              </ul>
+            </nav> -->
+          </div>
+        </div>
+      </div> 
+      <div class="card" *ngIf="selectedTable === 'itemBrands' && itemBrands">
+        <div class="card-body">
+            <h1>Brand</h1>
+          <br>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of itemBrands">
+                <td>{{ item.itemBrandName }}</td>
+                <td>
+                  <button class="btn1" (click)="update(item.itemTypeId)"type="button"
+                    class="btn btn-outline-info me-2">
+                    <mat-icon aria-label="info icon" fontIcon="info"></mat-icon>
+                  </button>
+                </td>
+                <td>
+                    <button class="btn1" (click)="delete(item.itemTypeId)"type="button"
+                      class="btn btn-outline-info me-2">
+                      <mat-icon aria-label="info icon" fontIcon="warning" class="red-icon"></mat-icon>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <!-- <nav class="page-nav">
+              <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                  <a class="page-link" (click)="previousPage()">Previous</a>
+                </li>
+                <li class="page-item">
+                  <span class="page-link">
+                    Page {{currentPage}} 
+                  </span>
+                </li>
+                <li class="page-item ">
+                  <button class="page-link" (click)="nextPage()" [class.disabled]="!hasNextPage">Next</button>
+                </li>
+              </ul>
+            </nav> -->
+          </div>
+        </div>
+      </div> 
+      <div class="card" *ngIf="selectedTable === 'locations' && locations">
+        <div class="card-body">
+            <h1>Location</h1>
+          <br>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of locations">
+                <td>{{ item.locationName }}</td>
+                <td>
+                  <button class="btn1" (click)="update(item.itemTypeId)"type="button"
+                    class="btn btn-outline-info me-2">
+                    <mat-icon aria-label="info icon" fontIcon="info"></mat-icon>
+                  </button>
+                </td>
+                <td>
+                    <button class="btn1" (click)="delete(item.itemTypeId)"type="button"
+                      class="btn btn-outline-info me-2">
+                      <mat-icon aria-label="info icon" fontIcon="warning" class="red-icon"></mat-icon>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <!-- <nav class="page-nav">
+              <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                  <a class="page-link" (click)="previousPage()">Previous</a>
+                </li>
+                <li class="page-item">
+                  <span class="page-link">
+                    Page {{currentPage}} 
+                  </span>
+                </li>
+                <li class="page-item ">
+                  <button class="page-link" (click)="nextPage()" [class.disabled]="!hasNextPage">Next</button>
+                </li>
+              </ul>
+            </nav> -->
+          </div>
+        </div>
+      </div> 
+</app-admin-three-layer-layout>

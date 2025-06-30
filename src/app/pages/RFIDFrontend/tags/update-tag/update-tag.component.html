@@ -1,0 +1,29 @@
+<app-tag-three-layer-layout>
+    <h1 class="heading">Update Asset Information</h1>
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label class="control-label" for="itemConditionId">Condition:</label>
+        <select id="itemConditionId" class="form-control" formControlName="itemConditionId" aria-label="Select Item Condition">
+          <option [ngValue]="null">Select Item Condition</option>
+          <option *ngFor="let itemCondition of itemConditions" [ngValue]="itemCondition.itemConditionId">{{ itemCondition.ConditionName }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label" for="locationId">Item location:</label>
+        <select id="locationId" class="form-control" formControlName="locationId" aria-label="Select Item Location">
+          <option [ngValue]="null">Select Item Location</option>
+          <option *ngFor="let location of locations" [ngValue]="location.locationId">{{ location.locationName }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Disposal:</label>
+                    <select  class="form-control" formControlName="disposalId" aria-label="Select Item Disposal">
+                        <option value>Select Item Disposal</option>
+                        <option *ngFor="let disposal of disposal" [value]="disposal.disposalId">{{ disposal.disposalName }}</option>
+                    </select>
+      </div>
+  <button type="submit" [disabled]="!updateForm.valid">Update</button>
+</form>
+
+</app-tag-three-layer-layout>

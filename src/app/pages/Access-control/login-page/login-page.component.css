@@ -1,0 +1,33 @@
+.col-xl-10 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.col-xl-10 .e-gov-picture {
+  position: absolute;
+  height: 450px;
+  width: 450px;
+}
+
+.btn btn-theme {
+  font-size: medium;
+  width: 150px;
+  height: 40px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #9c04aa;
+  color: white;
+}
+
+.loginBox {
+  width: 400px;
+  height: 280px;
+}
+
+.login {
+  height: 100%;
+  width: 100%;
+}/*# sourceMappingURL=login-page.component.css.map */

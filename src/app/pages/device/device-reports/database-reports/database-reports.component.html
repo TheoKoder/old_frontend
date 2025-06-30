@@ -1,0 +1,115 @@
+<app-three-layer-layout>
+  <app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+    <div class="container">
+      <div class="card">
+        <div class="report">
+            <h1>Reports</h1>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-12">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="table-responsive px-3">
+                      <table class="table table-striped align-middle table-nowrap">
+                        <tbody>
+                          <tr *ngFor="let device of result">
+                            <td>
+                              <div class="avatar-lg me-4">
+                                <img  [src]="'data:image/jpeg;base64,' + device.picture"
+                                class="img-fluid rounded"
+                                style="width: 100px"
+                                loading="lazy"
+                                alt="DeviceCamera">
+                              </div>
+                            </td>
+                            <td>
+                              <div class="avatar-lg me-4">
+                                <img  [src]="'data:image/jpeg;base64,' + device.screenshot"
+                                class="img-fluid rounded"
+                                  style="width: 100px"
+                                  loading="lazy"
+                                  alt="DeviceScreenShoot">
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <h5 class="font-size-18">
+                                  <p class="text-dark">Latitude:{{device.lat}}</p>
+                                  <p class="text-dark">Longitude:{{device.lng}}</p>
+                                </h5>
+                               
+                              </div>
+                            </td>
+                            <td>
+                              <ul class="list-unstyled ps-0 mb-0">
+                                <li>
+                                  <p class="text-muted mb-1 text-truncate">
+                                    <i
+                                      class="mdi mdi-circle-medium align-middle text-primary me-1"
+                                    ></i>
+                                    Mac Address:
+                                    {{device.mac_address}}
+                                  </p>
+                                </li>
+                                <li>
+                                  <p class="text-muted mb-1 text-truncate">
+                                    <i
+                                      class="mdi mdi-circle-medium align-middle text-primary me-1"
+                                    ></i>
+                                    Public IP:
+                                    {{device.public_ip}}
+                                  </p>
+                                </li>
+                                <li>
+                                  <p class="text-muted mb-0 text-truncate">
+                                    <i
+                                      class="mdi mdi-circle-medium align-middle text-primary me-1"
+                                    ></i>
+                                    Connected Wifi:
+                                    {{device.ssid}}
+                                  </p>
+                                </li>
+                              </ul>
+                            </td>
+                            <td>
+                              <button
+                                class="btn1"
+                                type="button"
+                                (click)="reportDetails(device.device_id,device.reportkey)"
+                                class="btn btn-outline-info me-2">
+                                <mat-icon
+                                  aria-label="info icon"
+                                  fontIcon="info"
+                                ></mat-icon> 
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div>
+                        <nav class="page-nav">
+                          <ul class="pagination">
+                            <li class="page-item" [class.disabled]="page===1">
+                              <a class="page-link" (click)="previousPage()">Previous</a>
+                            </li>
+                            <li class="page-item">
+                              <span class="page-link">
+                                Page {{page}} of {{totalPages}}
+                              </span>
+                            </li>
+                            <li class="page-item">
+                              <a class="page-link" (click)="nextPage()">Next</a>
+                            </li>
+                          </ul>
+                        </nav>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-three-layer-layout>

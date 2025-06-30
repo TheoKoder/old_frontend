@@ -1,0 +1,8 @@
+<!-- Button to Show Dialog -->
+<button (click)="showDialog()">View Asset</button>
+<!-- Button to Hide Dialog (Optional if dialog has its own close mechanism) -->
+<button *ngIf="showDialog" (click)="hideDialog()">Close</button>
+
+<!-- Asset View Dialog -->
+<app-asset-view-dialog *ngIf="isAssetDialog" [asset]="assetData"></app-asset-view-dialog>
+

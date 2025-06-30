@@ -1,0 +1,15 @@
+<app-admin-three-layer-layout>
+    <div class="container">
+        <h2 class="text">Update Item</h2>
+        <form (ngSubmit)="onSubmit()">
+          <div *ngFor="let key of itemDataKeys">
+            <label class="text">{{ key }}</label>
+            <input type="text" [(ngModel)]="itemData[key]" name="{{ key }}" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+      
+      
+      
+</app-admin-three-layer-layout>

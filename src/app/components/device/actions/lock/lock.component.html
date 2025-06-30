@@ -1,0 +1,22 @@
+<div class="container">
+    <div mat-dialog-content [formGroup]="lockDeviceForm">
+        <div class="me-5 mt-3">
+            <mat-form-field class="dropdown">
+              <mat-label>Lock Command</mat-label>
+              <mat-select [(value)]="selectedCommand">
+                <mat-option *ngFor="let lock of locks" [value]="lock">
+                  {{lock}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        <div class="mb-4 mt-3">
+            <label for="password" class="sr-only">Password:</label>
+            <input matInput type="password" class="form-control" formControlName="password" placeholder="enter unlock password">
+        </div>
+    </div>
+    <div class="mat-dialog-actions">
+        <button class="mat-raised-button" class="btn btn-outline-danger me-2" mat-button (click)="cancel()">Cancel</button>
+        <button mat-button [mat-dialog-close]="true" class="btn btn-success" (click)="onSubmit(lockDeviceForm)">Submit</button>
+    </div>
+</div>

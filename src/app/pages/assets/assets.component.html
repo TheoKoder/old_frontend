@@ -1,0 +1,69 @@
+
+  
+  <app-two-layer-layout>
+    <div class="layout" fxFill fxLayout="row"  fxLayoutAlign="space-between center">
+      <div fxLayout="column" fxFlex="33"> 
+        <mat-card>
+          <mat-card-content>
+           <div fxLayout="row">
+            <div fxLayout="column" fxFlex="70">
+              <h2 class="h6 mb-2">
+                <a routerLink="/laptopList" class="stretched-link text-reset">Portable Device</a>
+              </h2>
+              <p class="m-0" href="laptopList">Laptop Tracking</p>
+              <p class="m-0" href="laptopList">Location monitoring</p>
+            </div>
+            <div fxLayout="column" fxFlex="30">
+              <img src="assets/logo/Gauteng logo.png" alt="Image Description"
+              class="image" />
+            </div>
+           </div> 
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxLayout="column" fxFlex="33">
+        <mat-card>
+          <mat-card-content>
+            <div>
+              <div fxLayout="column" fxFlex="70">
+                <h2 class="h6 mb-2">
+                  <a class="stretched-link text-reset" routerLink="/all-tags">Furniture tracking</a>
+                </h2>
+                <div class="ps-3 col">
+                  <p class="m-0">Office Equipment</p>
+                  <p class="m-0">Office Accessories</p>
+                </div>
+              </div>
+              <div fxLayout="column" fxFlex="30">
+                <img src="assets/logo/Gauteng logo.png" alt="Image Description"
+              class="image" />
+              </div>
+            </div>
+           
+          </mat-card-content>
+        </mat-card>
+        
+      </div>
+      <div fxLayout="column" fxFlex="33">
+        <mat-card>
+          <mat-card-content>
+            <div fxFill fxLayout="row">
+              <div fxLayout="column" fxFlex="70">
+                <div class="ps-3 col">
+                  <h2 class="h6 mb-2">
+                    <a class="stretched-link text-reset" routerLink="/administration" >Administration</a>
+                  </h2>
+                  <p class="m-0">Configuration</p>
+                  <!-- <p class="m-0">monitors and servers</p> -->
+                </div>
+              </div>
+              <div fxLayout="column" fxFlex="30">
+                <img src="assets/logo/Gauteng logo.png" alt="Image Description"
+                  class="image" />
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+</app-two-layer-layout>

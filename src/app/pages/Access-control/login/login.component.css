@@ -1,0 +1,33 @@
+.p-5 {
+  position: relative;
+  width: 100%;
+}
+
+.card-body {
+  width: 950px;
+}
+
+.col-xl-10 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.col-xl-10 .e-gov-picture {
+  position: absolute;
+  height: 485px;
+  width: 450px;
+}
+
+.btn btn-theme {
+  font-size: medium;
+  width: 150px;
+  height: 40px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #9c04aa;
+  color: white;
+}/*# sourceMappingURL=login.component.css.map */

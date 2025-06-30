@@ -1,0 +1,145 @@
+<app-three-layer-layout>
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="zoneForm" (ngSubmit)="onSubmit(zoneForm)">
+        <h1 class="text-center h3 mb-3 font-weight-normal">
+          Create Zone
+        </h1>
+        <br>
+        <div class="me-5 mt-3">
+          <div class="form-group">
+            <label for="name" class="sr-only">Name</label>
+            <input type="name" name="name" id="name" class="form-control" placeholder="Name your geofence" required
+              formControlName="name" />
+          </div>
+        </div>
+        <br />
+        <!-- <div class="me-5 mt-3">
+          <div class="form-group">
+            <label for="radius" class="sr-only">Radius</label>
+            <input type="number" name="radius" id="radius" class="form-control" placeholder="km radius" required
+              formControlName="radius" />
+          </div>
+        </div> -->
+        <br />
+        <div class="me-5 mt-3">
+        <div id="map"></div>
+        </div>
+        <br />
+        <!-- <div class="me-5 mt-3">
+          <mat-form-field class="dropdown">
+            <mat-label>Radius Size</mat-label>
+            <mat-select [(value)]="selectedSize">
+              <mat-option *ngFor="let size of sizes" [value]="size">
+                {{size}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div> -->
+        <br />
+        <div class="form-group">
+          <div>
+            <div class="mb-3 mt-3">
+              <h1>Email Notifications
+                <button (click)="openDialog()" type="button" class="btn btn-outline-danger me-2">Add</button>
+              </h1>
+            </div>
+          </div>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Device When In</th>
+                <th>Device When Out</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of notifications">
+                <td>
+                  {{item.when_in}}
+                </td>
+                <td>
+                  {{item.when_out}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <div class="form-group">
+          <div>
+            <div class="mb-3 mt-3">
+              <h1>Actions
+                <button (click)="actionDialog()" type="button" class="btn btn-outline-danger me-2">Add</button>
+              </h1>
+            </div>
+          </div>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Context</th>
+                <th>Action Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of actions">
+                <td>
+                  {{item.context}}
+                </td>
+                <td>
+                  {{item.action_name}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <div class="card1">
+          <div class="card-body1">
+            <h2>Devices</h2>
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Missing</th>
+                  <!-- <th>State</th> -->
+                  <th>
+                    <mat-checkbox class="mdc-checkbox" (change)="selectAll($event)"></mat-checkbox>
+                    Select All
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="
+                                let device of devices
+                                  | paginate
+                                    : {
+                                        id: 'device_pagination',
+                                        itemsPerPage: 10,
+                                        currentPage: page,
+                                        totalItems: totalRecords
+                                      }
+                              ">
+                  <td>{{ device.name }}</td>
+                  <td>{{ device.missing }}</td>
+                  <!-- <td>{{ device.state }}</td> -->
+                  <td>
+                    <mat-checkbox (change)="selectRow(device.id)"></mat-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <pagination-controls id="device_pagination" (pageChange)="page = $event"></pagination-controls>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="col-sm-15">
+          <button class="btn btn-success btn-block me-5" type="submit" [disabled]="!zoneForm.valid">
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</app-three-layer-layout>

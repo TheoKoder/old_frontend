@@ -1,0 +1,165 @@
+<app-three-layer-layout>
+  <form [formGroup]="laptopForm" (ngSubmit)="onSubmit()" class="laptop-form">    
+    <div class="form-grid">
+      <div>
+        <label for="organisationDescription">Organisation Description</label>
+        <input id="organisationDescription" formControlName="organisationDescription" />
+        <div *ngIf="laptopForm.get('organisationDescription')?.touched && laptopForm.get('organisationDescription')?.invalid">
+          <small class="error">Organisation Description is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="componentDescription">Component Description</label>
+        <input id="componentDescription" formControlName="componentDescription" />
+        <div *ngIf="laptopForm.get('componentDescription')?.touched && laptopForm.get('componentDescription')?.invalid">
+          <small class="error">Component Description is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="postJobTitleDescription">Post Job Title Description</label>
+        <input id="postJobTitleDescription" formControlName="postJobTitleDescription" />
+        <div *ngIf="laptopForm.get('postJobTitleDescription')?.touched && laptopForm.get('postJobTitleDescription')?.invalid">
+          <small class="error">Post Job Title Description is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="businessUnit">Business Unit</label>
+        <input id="businessUnit" formControlName="businessUnit" />
+        <div *ngIf="laptopForm.get('businessUnit')?.touched && laptopForm.get('businessUnit')?.invalid">
+          <small class="error">Business Unit is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="postStatusDescription">Post Status Description</label>
+        <input id="postStatusDescription" formControlName="postStatusDescription" />
+        <div *ngIf="laptopForm.get('postStatusDescription')?.touched && laptopForm.get('postStatusDescription')?.invalid">
+          <small class="error">Post Status Description is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="postTypeDescription">Post Type Description</label>
+        <input id="postTypeDescription" formControlName="postTypeDescription" />
+        <div *ngIf="laptopForm.get('postTypeDescription')?.touched && laptopForm.get('postTypeDescription')?.invalid">
+          <small class="error">Post Type Description is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="persalNumber">PERSAL Number</label>
+        <input id="persalNumber" formControlName="persalNumber" />
+        <div *ngIf="laptopForm.get('persalNumber')?.touched && laptopForm.get('persalNumber')?.invalid">
+          <small class="error">PERSAL Number is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="surname">Surname</label>
+        <input id="surname" formControlName="surname" />
+        <div *ngIf="laptopForm.get('surname')?.touched && laptopForm.get('surname')?.invalid">
+          <small class="error">Surname is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="initials">Initials</label>
+        <input id="initials" formControlName="initials" />
+        <div *ngIf="laptopForm.get('initials')?.touched && laptopForm.get('initials')?.invalid">
+          <small class="error">Initials are required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="fullNames">Full Names</label>
+        <input id="fullNames" formControlName="fullNames" />
+        <div *ngIf="laptopForm.get('fullNames')?.touched && laptopForm.get('fullNames')?.invalid">
+          <small class="error">Full Names are required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="gender">Gender</label>
+        <input id="gender" formControlName="gender" />
+        <div *ngIf="laptopForm.get('gender')?.touched && laptopForm.get('gender')?.invalid">
+          <small class="error">Gender is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="computerName">Computer Name</label>
+        <input id="computerName" formControlName="computerName" />
+        <div *ngIf="laptopForm.get('computerName')?.touched && laptopForm.get('computerName')?.invalid">
+          <small class="error">Computer Name is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="type">Type</label>
+        <input id="type" formControlName="type" />
+        <div *ngIf="laptopForm.get('type')?.touched && laptopForm.get('type')?.invalid">
+          <small class="error">Type is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="operatingSystem">Operating System</label>
+        <input id="operatingSystem" formControlName="operatingSystem" />
+        <div *ngIf="laptopForm.get('operatingSystem')?.touched && laptopForm.get('operatingSystem')?.invalid">
+          <small class="error">Operating System is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="version">Version</label>
+        <input id="version" formControlName="version" />
+        <div *ngIf="laptopForm.get('version')?.touched && laptopForm.get('version')?.invalid">
+          <small class="error">Version is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="serialNumber">Serial Number</label>
+        <input id="serialNumber" formControlName="serialNumber" />
+        <div *ngIf="laptopForm.get('serialNumber')?.touched && laptopForm.get('serialNumber')?.invalid">
+          <small class="error">Serial Number is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="warrantyStartDate">Warranty Start Date</label>
+        <input id="warrantyStartDate" formControlName="warrantyStartDate" type="date" />
+      </div>
+  
+      <div>
+        <label for="warrantyEndDate">Warranty End Date</label>
+        <input id="warrantyEndDate" formControlName="warrantyEndDate" type="date" />
+      </div>
+  
+      <div>
+        <label for="location">Location</label>
+        <input id="location" formControlName="location" />
+        <div *ngIf="laptopForm.get('location')?.touched && laptopForm.get('location')?.invalid">
+          <small class="error">Location is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="active">Active</label>
+        <select id="active" formControlName="active">
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+        <div *ngIf="laptopForm.get('active')?.touched && laptopForm.get('active')?.invalid">
+          <small class="error">Active status is required.</small>
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</app-three-layer-layout>

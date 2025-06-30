@@ -1,0 +1,75 @@
+<mat-dialog-content>
+    <!-- <div class="example-input-wrapper">
+        <label for="duration">Animation duration:</label>
+        <input id="duration" value="{{this.duration}}" type="number" min="0" step="100" #duration>
+    </div> -->
+    <h2>Ready to Validate Click Start</h2>
+    <button mat-button (click)="this.start()" [disabled]="(this.checkCancel() || null)">Start</button>
+    <mat-vertical-stepper [linear]="false" #stepper [animationDuration]="this.duration">
+        <mat-step [stepControl]="firstFormGroup"  [editable]="true">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Checking for Tag Information</ng-template>
+                <br>
+                <mat-form-field class="row" appearance="outline">
+                    <mat-label>Tag Information:</mat-label>
+                    <input matInput readonly="true" placeholder="Tag Information:" style="text-align:center;" formControlName="firstCtrl">
+                </mat-form-field>
+                <!-- <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div> -->
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" [completed]="true" [editable]="false">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Check if Device is on Platform</ng-template>
+                <br>
+                <mat-form-field class="row" appearance="outline">
+                    <mat-label>Platform Check:</mat-label>
+                    <input matInput readonly="true" placeholder="Platform Check:" style="text-align:center;" formControlName="firstCtrl">
+                </mat-form-field>
+                <!-- <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div> -->
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup" [completed]="false" [editable]="false">
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Check if Device is in the Cloud</ng-template>
+                <br>
+                <mat-form-field class="row" appearance="outline">
+                    <mat-label>Cloud Check:</mat-label>
+                    <input matInput readonly="true" placeholder="Cloud Check:" style="text-align:center;" formControlName="firstCtrl">
+                </mat-form-field>
+                <div>
+                    <button mat-button [disabled]="(this.mesgRec || null)" (click)="mesgReceived()">Click if Message Received</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="fourthFormGroup" [completed]="false" [editable]="false">
+            <form [formGroup]="fourthFormGroup">
+                <ng-template matStepLabel>Updating Platform</ng-template>
+                <br>
+                <mat-form-field class="row" appearance="outline">
+                    <mat-label>Platform Update:</mat-label>
+                    <input matInput readonly="true" placeholder="Platform Update:" style="text-align:center;" formControlName="firstCtrl">
+                    <!-- <mat-label>Transaction Recorded:</mat-label> -->
+                    <input matInput readonly="true" placeholder="Platform Update:" style="text-align:center;" formControlName="secondCtrl">
+                </mat-form-field>
+            </form>
+        </mat-step>
+        <mat-step [completed]="false" [editable]="false">
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done. Thank you.
+            <div>
+                <!-- <button mat-button matStepperPrevious>Back</button> -->
+                <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+                <button mat-button (click)="this.complete()">Close</button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <!-- <button mat-raised-button color="primary" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button> -->
+    <button mat-raised-button mat-dialog-close tabindex="-1" (click)="closeDialog()" [disabled]="(this.checkCancel() || null)">Cancel</button>
+</mat-dialog-actions>

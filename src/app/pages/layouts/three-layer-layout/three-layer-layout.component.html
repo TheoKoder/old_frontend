@@ -1,0 +1,13 @@
+<div fxLayout="column" fxFill class="sp-container">
+  <div fxLayout="row" fxFlex="20">
+    <top-menu fxFill></top-menu>
+  </div>
+  <div fxLayout="row" fxFlex="80" style="border: 1px solid black">
+    <div fxLayout="column" fxFlex="15" class="sp-column-tree">
+      <sp-left-menu fxFill></sp-left-menu>
+    </div>
+    <div fxLayout="column" fxFlex="85">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

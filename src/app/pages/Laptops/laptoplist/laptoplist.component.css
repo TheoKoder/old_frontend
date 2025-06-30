@@ -1,0 +1,72 @@
+.dateContainer {
+  position: relative;
+  left: 550px;
+  width: 320px;
+  bottom: 23px;
+}
+
+.download-container {
+  position: relative;
+  width: 288px;
+  bottom: 66px;
+}
+
+.row {
+  position: relative;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-button, .reset-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover, .reset-button:hover {
+  background-color: #45a049;
+}
+
+.page {
+  position: relative;
+  top: 16px;
+}
+
+.page-link {
+  color: #000;
+  background-color: transparent;
+}
+
+.small-card {
+  width: 400px;
+  margin: 10px;
+}
+
+.text {
+  color: #000;
+}
+
+.btn1 {
+  width: 100%;
+}
+
+.download-btn {
+  margin-left: auto;
+}
+
+.fieldset {
+  margin: 8px;
+  border: 1px solid silver;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.legend {
+  padding: 2px;
+}/*# sourceMappingURL=laptoplist.component.css.map */

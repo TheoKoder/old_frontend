@@ -1,0 +1,14 @@
+.small-card {
+  width: 400px;
+  margin: 10px;
+}
+
+.text {
+  color: #000;
+}
+
+.header-text {
+  font-size: 20px;
+  color: black !important;
+  text-align: left !important;
+}/*# sourceMappingURL=tag-page.component.css.map */

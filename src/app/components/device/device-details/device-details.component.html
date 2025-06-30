@@ -1,0 +1,212 @@
+<div class="flex-container">
+  <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+    <mat-card class="mat-elevation-z4" fxFlex="50">
+      <mat-card-header>
+        <mat-card-title>Device Actions</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutAlign="space-evenly stretch">
+          <div fxLayout="row" fxLayoutGap="20px">
+            <div>
+              <button (click)="missing(details.id)" class="item auto">
+                Set as missing
+              </button>
+            </div>
+            <div>
+              <button (click)="lock(details.id)" class="item auto">
+                Lock screen
+              </button>
+            </div>
+            <div>
+              <button (click)="alert(details.id)" class="item auto">
+                Alert Message
+              </button>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutGap="20px">
+            <div>
+              <button (click)="alarm(details.id)" class="item auto">
+                Sound Alarm
+              </button>
+            </div>
+            <div>
+              <button (click)="hardware()" class="item auto">
+                Hardware
+              </button>
+            </div>
+            <div>
+              <button (click)="location(details.id)" class="item auto">
+                Last Location
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <!-- <mat-card class="mat-elevation-z4" fxFlex="50">
+      <mat-card-header>
+        <mat-card-title>Device Information</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <h5>Device Name</h5>
+          <div class="info">{{details.name}}</div>
+          <mat-divider></mat-divider>
+          <hr>
+          <h5>Logged in User</h5>
+          <div class="info">{{details.logged_user}}</div>
+          <mat-divider></mat-divider>
+          <hr>
+          <h5>Description</h5>
+          <div class="info">{{details.description}}</div>
+          <mat-divider></mat-divider>
+          <hr>
+          <h5>Type</h5>
+          <div class="info">{{details.type}}</div>
+          <mat-divider></mat-divider>
+          <hr>
+          <h5>Missing</h5>
+          <div class="info">{{details.missing}}</div>
+          <mat-divider></mat-divider>
+          <hr>
+          <h5>Device missing reports</h5>
+          <div class="info">{{details.reports_details.reports_count}}</div>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </mat-card-content>
+    </mat-card> -->
+  </div>
+</div>
+
+
+<!-- <div fxLayout="row" fxLayoutAlign="start center">
+  <mat-card fxFlex="50%">
+   
+  </mat-card>
+  <mat-card fxFlex="50%">
+    <mat-list>
+      <button (click)="missing(details.id)" class="btn btn-outline-light">
+        Set as missing
+      </button>
+      <mat-divider></mat-divider>
+      <button (click)="lock(details.id)" class="btn btn-outline-light">
+        Lock screen
+      </button>
+      <mat-divider></mat-divider>
+      <button (click)="alert(details.id)" class="btn btn-outline-light">
+        Alert Message
+      </button>
+      <mat-divider></mat-divider>
+      <button (click)="alarm(details.id)" class="btn btn-outline-light">
+        Sound Alarm
+      </button>
+      <mat-divider></mat-divider>
+      <button (click)="hardware()" class="btn btn-outline-light">
+        Hardware
+      </button>
+      <mat-divider></mat-divider>
+      <button (click)="location(details.id)" class="btn btn-outline-light">
+        Last Location
+      </button>
+    </mat-list>
+  </mat-card>
+</div> -->
+
+
+<!-- <div class="container">
+  <div class="ui-item">
+    <div class="ui-head">
+      <div class="ui-trans clearfix">
+        <img
+          src="https://media.licdn.com/dms/image/C4D0BAQGyXV-cMgPn-w/company-logo_200_200/0/1657275405833/purple_wire_pty_ltd_logo?e=2147483647&v=beta&t=ifhz1PoMMQGGlcI7cixmxHVdqbfyhltnSzslezBFB10"
+          alt class="img-responsive" />
+
+        
+
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <mat-card fxFlex="50%">part1</mat-card>
+          <mat-card fxFlex="50%">part2</mat-card>
+       </div>
+
+        <mat-card>
+          <mat-card-content>
+            <mat-list>
+              <h5>Device Name</h5>
+              <h6>{{details.name}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Logged in User</h5>
+              <h6>{{details.logged_user}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Description</h5>
+              <h6>{{details.description}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Type</h5>
+              <h6>{{details.type}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Missing</h5>
+              <h6>{{details.missing}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Device missing reports</h5>
+              <h6>{{details.reports_details.reports_count}}</h6>
+              <mat-divider></mat-divider>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+        <div class="card1 white-text">
+          <div class="card-body white-text">
+            <mat-list>
+              <h5>Device Name</h5>
+              <h6>{{details.name}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Logged in User</h5>
+              <h6>{{details.logged_user}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Description</h5>
+              <h6>{{details.description}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Type</h5>
+              <h6>{{details.type}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Missing</h5>
+              <h6>{{details.missing}}</h6>
+              <mat-divider></mat-divider>
+              <h5>Device missing reports</h5>
+              <h6>{{details.reports_details.reports_count}}</h6>
+              <mat-divider></mat-divider>
+            </mat-list>
+          </div>
+        </div>
+
+        <div class="card2">
+          <div class="card-body white-text">
+            <mat-list>
+              <button (click)="missing(details.id)" class="btn btn-outline-light">
+                Set as missing
+              </button>
+              <mat-divider></mat-divider>
+              <button (click)="lock(details.id)" class="btn btn-outline-light">
+                Lock screen
+              </button>
+              <mat-divider></mat-divider>
+              <button (click)="alert(details.id)" class="btn btn-outline-light">
+                Alert Message
+              </button>
+              <mat-divider></mat-divider>
+              <button (click)="alarm(details.id)" class="btn btn-outline-light">
+                Sound Alarm
+              </button>
+              <mat-divider></mat-divider>
+              <button (click)="hardware()" class="btn btn-outline-light">
+                Hardware
+              </button>
+              <mat-divider></mat-divider>
+              <button (click)="location(details.id)" class="btn btn-outline-light">
+                Last Location
+              </button>
+            </mat-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

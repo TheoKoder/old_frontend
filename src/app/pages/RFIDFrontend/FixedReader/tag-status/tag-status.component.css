@@ -1,0 +1,55 @@
+.floor-select-container {
+  position: relative;
+  left: 288px;
+  bottom: 27px;
+}
+
+.download-container {
+  position: relative;
+  left: 407px;
+  bottom: 32px;
+}
+
+.container {
+  overflow: hidden;
+}
+
+input[type=text] {
+  width: 150px;
+}
+
+.btn1 {
+  width: 100%;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.page {
+  position: relative;
+  top: 16px;
+}
+
+.page-link {
+  color: #000;
+  background-color: transparent;
+}
+
+.small-card {
+  width: 400px;
+  margin: 10px;
+}
+
+.text {
+  color: #000;
+}
+
+.download-btn {
+  margin-left: auto;
+}
+
+.card-header {
+  display: flex;
+}/*# sourceMappingURL=tag-status.component.css.map */

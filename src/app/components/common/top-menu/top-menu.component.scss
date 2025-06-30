@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px; // Add padding for better spacing
+
+  // Grid Item Styles
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .imagePl .pic {
+      max-width: 100%; // Make sure images are responsive
+      height: 100px; // Maintain aspect ratio
+      ;
+    }
+  }
+
+  // Header Text
+  .header-text {
+    font-size: 3.5em; // Set initial font size
+    text-align: center;
+  }
+
+  // Media Queries
+  @media (max-width: 768px) {
+    flex-direction: column; // Stack items vertically
+
+    .grid-item {
+      fxFlex: 100; // Full width on smaller screens
+
+      .imagePl .pic {
+        max-width: 1000%; // Adjust image size for mobile
+        height: 35px;
+        
+      }
+      .imageProv .pic2{
+
+        max-width: 50px;
+        height: 10px;
+    }
+  }
+
+    .header-text {
+      font-size: 1.5em; // Adjust font size for mobile
+    }
+  }
+
+  @media (max-width: 550px) {
+    
+    .grid-item {
+      display: grid;
+      grid-template-columns: 100px repeat(auto-fill, minmax(50px, 3fr));
+      gap: 10px; // Adjust the gap between grid items as needed
+      max-width: 950px; // Set a maximum width for the grid
+      width: 50%; // Ensure the grid takes the full width of its container
+      .imagePl .pic {
+        max-width: 40%; // Further adjust image size for very small screens
+        height: auto;
+      }
+
+      .imageProv .pic2{
+        max-width: 40%; // Further adjust image size for very small screens
+        height: auto;
+      }
+    }
+
+    .header-text {
+      font-size: 1.2em; // Further adjust font size for very small screens
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<div>
+    <h2 mat-dialog-title>Deactivate Tag</h2>
+    <mat-dialog-content>
+        <div class="position-relative card table-nowrap table-card">
+            <div class="card-header align-items-center">
+                <h1 class="mb-0">Devices</h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table mb-0">
+                    <thead class="small text-uppercase bg-body text-muted">
+                        <tr>
+                            <th *ngFor="let header of Headers">{{ header }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="align-middle" *ngFor="let item of result">
+                            <td *ngFor="let header of Headers">{{ item[header] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h2>Please confirm if you would like to remove the tag: {{this.data.name}} and disassociate it from the above
+            list of devices or click cancel</h2>
+        <button type="button" class="btn btn-primary" (click)="accept()">Yes</button>
+        <br>
+        <div *ngIf=this.onComplete>{{this.mesg}}
+            <br>
+            <button mat-button mat-dialog-close [disabled]="(!this.isComplete || null)">Close</button>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close [disabled]="(this.isComplete || null)">Cancel</button>
+    </mat-dialog-actions>
+</div>

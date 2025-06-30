@@ -1,0 +1,39 @@
+.icon-lg {
+    height: 100px; 
+    width: 100px; 
+    position: relative;
+} 
+
+.card{
+    width: 230px; 
+    margin-top: 80px;
+}
+/* .card-body{
+    display: flex;
+    justify-content: center;
+} */
+.card-footer{
+    display: flex; 
+    justify-content: center;
+}
+.col{
+    position: relative; 
+    left: 30%;
+}
+.btn-col{
+    height: 35px;
+}
+ .container{
+    /* position: absolute;
+    display: flex; */
+    width: fit-content;
+    /* justify-content: center;
+    background-color: gray;
+    top: 0%; */
+    height: fit-content;
+}
+
+/* .details{ 
+    padding-top: 80px;
+    background-color: gray;
+}  */

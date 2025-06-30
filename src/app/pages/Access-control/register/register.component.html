@@ -1,0 +1,71 @@
+<app-two-layer-layout>
+  <div class="col-xl-10" fxFill>
+    <div class="card border-0">
+      <div class="card-body p-0">
+        <div class="row no-gutters">
+          <div class="col-lg-6">
+            <div class="p-5">
+              <div class="mb-5">
+                <h1 class="h4 font-weight-bold text-theme">Registration</h1>
+              </div>
+              <h2 class="h5 mb-0">Welcome</h2>
+              <p class="text-muted mt-2 mb-5">
+                Register to access admin panel.
+              </p>
+              <form [formGroup]="form" (ngSubmit)="register(form)">
+                <div class="form-group">
+                  <label class="lbl1">Employee Number</label>
+                  <input formControlName="EmpNumber" name="EmpNumber" type="text" placeholder="Employee Number"
+                    class="form-control" required minlength="1" />
+                </div>
+                <div class="form-group">
+                  <label class="lbl1">Name</label>
+                  <input formControlName="Name" name="Name" type="text" placeholder="Name" class="form-control" required
+                    minlength="1" />
+                </div>
+                <div class="form-group">
+                  <label class="lbl1">MiddleName</label>
+                  <input formControlName="MiddleName" name="MiddleName" type="text" placeholder="Name"
+                    class="form-control" required minlength="1" />
+                </div>
+                <div class="form-group">
+                  <label class="lbl1">Surname</label>
+                  <input formControlName="Surname" name="Surname" type="text" placeholder="Surname" class="form-control"
+                    required minlength="1" />
+                </div>
+                <div class="form-group">
+                  <label class="lbl1">Email Address </label>
+                  <input formControlName="email" name="email" type="email" placeholder="email" class="form-control"
+                    required minlength="1" />
+                </div>
+                <div class="form-group">
+                  <label class="lbl1">Phone Number</label>
+                  <input formControlName="phoneNumber" name="phoneNumber" type="number" placeholder="Number"
+                    class="form-control" required minlength="1" />
+                </div>
+                <div class="form-group">
+                  <label for="role">Role</label>
+                  <select class="form-control" formControlName="role" id="role" name="role" [(ngModel)]="selectedRole"
+                    required>
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                  </select>
+                </div>
+                <div class="form-group mb-5">
+                  <label class="lbl1">Password</label>
+                  <input formControlName="password" name="password" type="password" required placeholder="*********"
+                    minlength="1" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-theme">Register</button>
+                <a routerLink="/assets" class="btn btn-theme">Menu</a>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6 d-none d-lg-inline-block">
+            <img src="assets/logo/login_logo.jpg" alt="e-gov-logo" class="e-gov-picture" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-two-layer-layout>

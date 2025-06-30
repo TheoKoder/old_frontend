@@ -1,0 +1,13 @@
+<div>
+<p>clouddevice-dialog works!</p>
+<mat-list>
+    @for (message of listData; track message) {
+      <mat-list-item>
+        <h3 matListItemTitle>{{message.name}}</h3>
+        <p matListItemLine>{{message.state}}</p>
+        <p matListItemLine class="demo-2">{{message.state}}</p>
+      </mat-list-item>
+    }
+  </mat-list>
+<button mat-raised-button mat-dialog-close tabindex="-1" (click)="closeDialog()">Cancel</button>
+</div>

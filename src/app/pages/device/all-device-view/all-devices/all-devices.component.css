@@ -1,0 +1,74 @@
+.container {
+  position: relative;
+  top: 10px;
+  color: rgb(14, 14, 14);
+  font-size: 30px;
+}
+
+.container1 {
+  overflow: hidden;
+}
+
+.btn2 {
+  width: 100%;
+}
+
+.row {
+  position: relative;
+  right: 975px;
+}
+
+.download-btn {
+  position: relative;
+  margin-left: auto;
+  left: 95%;
+}
+
+.col {
+  position: relative;
+  top: 18px;
+  left: 1000px;
+}
+
+.col-1 {
+  position: relative;
+  bottom: 7px;
+  right: 50px;
+}
+
+.search-bar {
+  position: relative;
+  right: -700px;
+  top: 0px;
+}
+
+.card {
+  --bs-card-bg: #f8f7f7;
+  position: relative;
+  top: 15px;
+}
+
+.small-card {
+  position: relative;
+  top: 5px;
+  width: 400px;
+  margin: 10px;
+}
+
+.text {
+  color: black;
+}
+
+.page {
+  position: relative;
+  top: 16px;
+}
+
+.page-link {
+  color: #000;
+  background-color: transparent;
+}
+
+th {
+  background-color: #f8f7f7;
+}/*# sourceMappingURL=all-devices.component.css.map */

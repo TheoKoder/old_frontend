@@ -1,0 +1,9 @@
+<canvas baseChart width="200" height="200"
+    [data]="barChartData"
+    [labels]="stackedChartLabels"
+    [type]="stackedChartType"
+    [options]="stackedChartOptions"
+    [legend]="stackedChartLegend"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)"
+></canvas>

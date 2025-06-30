@@ -1,0 +1,55 @@
+<p>asset-view-dialog works!</p>
+<mat-card if="asset" class="asset-card">
+    <mat-card-header>
+        <mat-card-title>{{ asset.asset_description }}</mat-card-title>
+        <mat-card-subtitle>{{ asset.asset_class }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="asset-details">
+          <div class="detail-row">
+            <label>Inventory Number:</label>
+            <input matInput [value]="asset.inventory_number" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Serial Number:</label>
+            <input matInput [value]="asset.serial_number" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Purchase Price:</label>
+            <input matInput [value]="asset.purchase_price | currency" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Location Code:</label>
+            <input matInput [value]="asset.location_code" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Building Location:</label>
+            <input matInput [value]="asset.building_location" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Capitalisation Date:</label>
+            <input matInput [value]="asset.capitalisation_date | date" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Inventory Date:</label>
+            <input matInput [value]="asset.inventory_date | date" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Asset Condition:</label>
+            <input matInput [value]="asset.asset_condition" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Barcode:</label>
+            <input matInput [value]="asset.barcode" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Normal GPN Asset:</label>
+            <input matInput [value]="asset.normal_gpn_asset" readonly />
+          </div>
+          <div class="detail-row">
+            <label>Tagged:</label>
+            <input matInput [value]="asset.tagged" readonly />
+          </div>
+        </div>
+      </mat-card-content>
+</mat-card>

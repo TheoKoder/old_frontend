@@ -1,0 +1,117 @@
+.floor-select-container {
+  position: relative;
+  left: 288px;
+  bottom: 27px;
+}
+
+.download-container {
+  position: relative;
+  left: 407px;
+  bottom: 32px;
+}
+
+.container {
+  overflow: hidden;
+}
+
+input[type=text] {
+  width: 150px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.text {
+  color: #000;
+}
+
+.date {
+  position: relative;
+  width: 350px;
+  left: 850px;
+}
+
+.card-header {
+  display: flex;
+}
+
+.page {
+  position: relative;
+  top: 16px;
+}
+
+.title {
+  color: #000;
+}
+
+.small-card {
+  width: 450px;
+  margin: 10px;
+}
+
+.page-link {
+  color: #000;
+  background-color: transparent;
+}
+
+.tile {
+  height: 100px;
+}
+
+.p {
+  height: 100px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.matD {
+  position: relative;
+  right: 10px;
+}
+
+.btn1 {
+  width: 100%;
+}
+
+.custom-form-field {
+  width: 200px;
+  border-radius: 30px;
+  height: 65px;
+  top: 5px;
+  position: relative;
+}
+
+.form-select {
+  position: relative;
+  width: 200px;
+  outline: black !important;
+  box-shadow: black !important;
+  border-bottom-color: black !important;
+}
+
+.download-btn {
+  margin-left: auto;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 10px;
+  gap: 2px;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid #000000;
+  outline: none;
+  width: 200px;
+  right: 10px;
+  font-size: 16px;
+}/*# sourceMappingURL=tag-new.component.css.map */

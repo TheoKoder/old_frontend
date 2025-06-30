@@ -1,0 +1,129 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Web-primary: mat.define-palette(mat.$indigo-palette);
+$Web-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Web-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Web-theme: mat.define-light-theme((
+  color: (
+    primary: $Web-primary,
+    accent: $Web-accent,
+    warn: $Web-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Web-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import 'https://bootswatch.com/5/journal/bootstrap.css';
+
+.black{
+    background-color: black;
+    color: white;
+}
+
+.blue{
+    background-color: blue;
+    color: white;
+}
+
+.green{
+    background-color: green;
+    color: white;
+}
+
+
+.red-snackbar{
+    background-color: red;
+    color: white;
+
+}
+
+.green-snackbar{
+    background-color: green;
+    color: white;
+
+}
+
+html { height: 100%; width: 100%;}
+body { width: 100%; height: 100%; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color: #f4f3ef;; }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// .container {
+//   width: 100%;
+//   padding: 20px;
+
+//   @media (max-width: 1200px) {
+//     padding: 15px;
+//   }
+  
+//   @media (max-width: 768px) {
+//     padding: 10px;
+//   }
+  
+//   @media (max-width: 480px) {
+//     padding: 5px;
+//   }
+// }
+
+// .header {
+//   width: 100%;
+//   height: 10vh;
+
+//   @media (max-width: 768px) {
+//     height: 15vh;
+//   }
+
+//   @media (max-width: 480px) {
+//     height: 20vh;
+//   }
+// }
+
+// .flex-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
+
+// .flex-item {
+//   flex: 1 1 45%;
+//   margin: 10px;
+
+//   @media (max-width: 768px) {
+//     flex: 1 1 100%;
+//   }
+// }
+
+// img, video {
+//   max-width: 100%;
+//   height: auto;
+// }

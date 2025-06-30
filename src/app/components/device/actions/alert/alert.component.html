@@ -1,0 +1,15 @@
+
+<div class="container">
+    <app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+    <div mat-dialog-content [formGroup]="alertMessageForm">
+        <div class="mb-4 mt-3">
+            <label for="message" class="sr-only">Message:</label>
+            <input matInput type="text" class="form-control" formControlName="message" placeholder="type alert message">
+        </div>
+    </div>
+   
+    <div class="mat-dialog-actions">
+        <button class="mat-raised-button" class="btn btn-outline-danger me-2" mat-button (click)="cancel()">Cancel</button>
+        <button mat-button [mat-dialog-close]="true" class="btn btn-success" (click)="onSubmit(alertMessageForm)">Submit</button>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+ <app-three-layer-layout>
+  <div class= "container1"> E-Gov </div>
+     
+<input [(ngModel)]="SearchParams"
+placeholder="Search" style="position: relative;
+margin-left: 874px; bottom: 15px;"/>
+<button class="button" (click)="search()">search</button>
+    <div class="card">
+      <div class="card-body">
+        <br>
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>INVNR</th>
+              <th>SERNR</th>
+              <th>TXT50</th>
+              <th>PERNR</th>
+              <th>ANBTR01</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let device of LaptopData| paginate
+            : {
+                id: 'eGov_pagination',
+                itemsPerPage: 5,
+                currentPage: page,
+                totalItems: totalRecords}">
+              <td>{{device.ID}}</td>
+              <td>{{device.INVNR}}</td>
+              <td>{{device.SERNR}}</td>
+              <td>{{device.TXT50}}</td>
+              <td>{{device.PERNR}}</td>
+              <td>{{device.ANBTR01}}</td>
+              <td>{{device.lat}}</td>
+              <td>{{device.lng}}</td>
+              <td>
+                <button class="btn1" (click)="deviceDetails(device.Id)" type="button"
+                  class="btn btn-outline-info me-2">
+                  <!-- <mat-icon aria-label="info icon" fontIcon="info"></mat-icon> -->
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <pagination-controls id="eGov_pagination" (pageChange)="page = $event"></pagination-controls>
+      </div>
+      </div>
+    </div>  
+    </app-three-layer-layout>
+    
+   
+  

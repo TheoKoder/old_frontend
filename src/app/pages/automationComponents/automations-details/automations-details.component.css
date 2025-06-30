@@ -1,0 +1,16 @@
+.container1 {
+  position: relative;
+  top: 10px;
+  color: black;
+  font-size: 30px;
+}
+
+.card2 {
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  margin-top: 62px;
+  left: 50px;
+}/*# sourceMappingURL=automations-details.component.css.map */

@@ -1,0 +1,7 @@
+<app-two-layer-layout>
+  <app-laptop-register-link></app-laptop-register-link>
+    <div  class="login" fxLayoutAlign="center center" fxLayoutGap="1px">
+        <sp-login (newLoginEvent)="doLogin($event)" [header]="loginHeader" class="loginBox"></sp-login>
+        <img src="assets/logo/login_logo.jpg" alt="e-gov-logo" class="loginBox" />
+    </div>
+</app-two-layer-layout>

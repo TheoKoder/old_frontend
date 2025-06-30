@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  top: 10px;
+  color: black;
+  font-size: 15px;
+  overflow: hidden;
+}
+
+.card {
+  margin-bottom: 24px;
+  box-shadow: 0 2px 3px #e4e8f0;
+}
+
+.report {
+  position: relative;
+  margin-left: 100px;
+}
+
+.card {
+  position: relative;
+  margin-left: 0px;
+  width: 1187px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #eff0f2;
+  border-radius: 1rem;
+}
+
+.font-size-18 {
+  font-size: 18px !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: #7f838b !important;
+}
+
+.font-size-20 {
+  font-size: 20px !important;
+}
+
+.font-size-15 {
+  font-size: 15px !important;
+}
+
+.card-body {
+  position: relative;
+  left: 0px;
+}/*# sourceMappingURL=reports.component.css.map */

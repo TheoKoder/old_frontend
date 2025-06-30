@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+.header .grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .grid-item .imagePl .pic {
+  max-width: 100%;
+  height: 100px;
+}
+.header .header-text {
+  font-size: 3.5em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  .header .grid-item {
+    fxFlex: 100;
+  }
+  .header .grid-item .imagePl .pic {
+    max-width: 1000%;
+    height: 35px;
+  }
+  .header .grid-item .imageProv .pic2 {
+    max-width: 50px;
+    height: 10px;
+  }
+  .header .header-text {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 550px) {
+  .header .grid-item {
+    display: grid;
+    grid-template-columns: 100px repeat(auto-fill, minmax(50px, 3fr));
+    gap: 10px;
+    max-width: 950px;
+    width: 50%;
+  }
+  .header .grid-item .imagePl .pic {
+    max-width: 40%;
+    height: auto;
+  }
+  .header .grid-item .imageProv .pic2 {
+    max-width: 40%;
+    height: auto;
+  }
+  .header .header-text {
+    font-size: 1.2em;
+  }
+}/*# sourceMappingURL=top-menu.component.css.map */

@@ -1,0 +1,131 @@
+<!-- <app-three-layer-layout> -->
+<app-progress-bar [isLoading]="isLoading"></app-progress-bar>
+<div>
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Report Details</mat-card-title>
+    </mat-card-header>
+    @if (this.isData){
+    <mat-card-content style="display: flex;">
+      <div fxLayout="row">
+        <div fxFlex="50%">
+          <div>
+            <img src="{{ details.picture_url ? details.picture_url : 'assets/logo/PurpleWire logo.jpeg'}}"
+              style="width: 400px; height: 250px;" alt="DeviceScreenShoot" />
+          </div>
+          <div>
+            <img src={{details.screenshot_url}} style="width: 400px;height: 250px;" alt="DeviceScreenShoot" />
+          </div>
+        </div>
+        <div fxFlex="50%">
+          <div class="col">
+            <div class="col1">Report Key:</div>
+            <div class="col2">{{details.reportkey}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Place Name:</div>
+            <div class="col2">{{testData.place_name}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Wifi:</div>
+            <div class="col2">{{details.ssid}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Gateway IP:</div>
+            <div class="col2">{{details.gateway_ip}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Name:</div>
+            <div class="col2">{{LaptopDetailedReports.name}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Description:</div>
+            <div class="col2">{{LaptopDetailedReports.description}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Operating:</div>
+            <div class="col2">{{LaptopDetailedReports.os_details.os}} {{LaptopDetailedReports.os_details.os_version_name}}
+              version:{{LaptopDetailedReports.os_details.os_version}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Serial Number:</div>
+            <div class="col2">{{LaptopDetailedReports.device_details.hardware[0].data[0].serial_number}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Logged in User:</div>
+            <div class="col2">Logged in User:{{LaptopDetailedReports.logged_user}}</div>
+          </div>
+          <div class="col">
+            <div class="col1">Class Description:</div>
+            <div class="col2">{{LaptopDetailedReports.type}}</div>
+          </div>
+          <!-- <p>Report Key:{{details.reportkey}}</p>
+          <p>Place Name:{{testData.place_name}}</p> -->
+          <!-- <p>Wifi:{{details.ssid}}</p>
+          <p>Gateway IP:{{details.gateway_ip}}</p>
+          <p>Name:{{LaptopDetailedReports.name}}</p> -->
+          <!-- <p>Description:{{LaptopDetailedReports.description}}</p>
+          <p>Operating: {{LaptopDetailedReports.os_details.os}} {{LaptopDetailedReports.os_details.os_version_name}}
+            version:{{LaptopDetailedReports.os_details.os_version}}</p>
+          <p>Serial Number:{{LaptopDetailedReports.device_details.hardware[0].data[0].serial_number}}</p>
+          <p>Logged in User:{{LaptopDetailedReports.logged_user}}</p>
+          <p>Class Description:{{LaptopDetailedReports.type}}</p> -->
+          <br>
+          <p>Report generated on:{{details.created_at}}</p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="generatePDF()" class="px-btn theme-t">Download Report</button>
+    </mat-card-actions>
+    }
+  </mat-card>
+  <!-- <div class="row align-items-center justify-content-around flex-row-reverse">
+    <div class="col-lg-6">
+      <div class="about-text">
+        <h3 class="dark-color">Report Key: {{details.reportkey}}</h3>
+        <br>
+        <div *ngIf="placeNameReady">
+          <h4 class="theme-color">{{testData.place_name}}</h4>
+        </div>
+        <h4 class="theme-color">Latitude:{{details.lat}} &amp; Longitude:{{details.lng}}</h4>
+        <p>Wifi:{{details.ssid}}</p>
+        <p>Gateway IP:{{details.gateway_ip}}</p>
+        <p>Name:{{LaptopDetailedReports.name}}</p>
+        <p>Description:{{LaptopDetailedReports.description}}</p>
+        <p>Operating: {{LaptopDetailedReports.os_details.os}} {{LaptopDetailedReports.os_details.os_version_name}}
+          version:{{LaptopDetailedReports.os_details.os_version}}</p>
+        <p>Serial Number:{{LaptopDetailedReports.device_details.hardware[0].data[0].serial_number}}</p>
+        <p>Logged in User:{{LaptopDetailedReports.logged_user}}</p>
+        <p>Class Description:{{LaptopDetailedReports.type}}</p>
+        <br>
+        <p>Report generated on:{{details.created_at}}</p>
+        <div class="btn-bar">
+          <button (click)="generatePDF()" class="px-btn theme-t">Download Report</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 text-center">
+      <div>
+        <img src="{{ details.picture_url ? details.picture_url : 'assets/logo/PurpleWire logo.jpeg'}}"
+          style="width: 400px; height: 250px;" alt="DeviceScreenShoot" />
+      </div>
+      <div>
+        <img src={{details.screenshot_url}} style="width: 400px;height: 250px;" alt="DeviceScreenShoot" />
+      </div>
+    </div>
+  </div> -->
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Map View</mat-card-title>
+      <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+    </mat-card-header>
+    @if (this.isMap){
+    <mat-card-content>
+      <sp-map #spmap [mapData]=this.mapData></sp-map>
+    </mat-card-content>
+    }
+  </mat-card>
+</div>
+
+<!-- </app-three-layer-layout> -->

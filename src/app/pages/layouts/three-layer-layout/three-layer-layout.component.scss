@@ -1,0 +1,75 @@
+.sp-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f4f3ef;
+  justify-content: center;
+  height: max-content;
+
+  .sp-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; // Prevent wrapping for larger screens
+    width: 100%;
+  }
+
+  .sp-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+  .sp-column-tree {
+    display: flex;
+    flex-direction: column; // Ensure the left menu is in a column
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .sp-container {
+      flex-direction: column;
+      text-align: center;
+      height: auto; // Allow height to adjust based on content
+    }
+
+    .sp-row {
+      flex-direction: column; // Stack rows on smaller screens
+    }
+
+    .sp-column-tree {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .header-text {
+      margin: 10px 0;
+    }
+
+    .image1 img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .sp-container {
+      text-align: center;
+    }
+
+    .header-text {
+      margin: 10px 0;
+    }
+
+    .sp-column-tree {
+      flex-direction: column;
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    .image1 img {
+      width: 100px;
+      height: auto;
+    }
+  }
+}
