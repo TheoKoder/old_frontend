@@ -1,0 +1,45 @@
+server {
+	listen 80 default_server;
+    	listen [::]:80 default_server;
+	listen [::]:443 ssl; # ipv6only=on; # managed by Certbot
+    	listen 443 ssl; # managed by Certbot
+
+    	ssl_certificate /etc/letsencrypt/live/asset.purplewire.co.za/fullchain.pem; # managed by Certbot
+    	ssl_certificate_key /etc/letsencrypt/live/asset.purplewire.co.za/privkey.pem; # managed by Certbot
+    	include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    	ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+       	server_name asset.purplewire.co.za;
+	# server_name asset.eastus2.cloudapp.azure.com;
+
+       	root /var/www/dat;
+       	index index.html;
+
+       	location / {
+               try_files $uri $uri/ =404;
+       	}
+	if ($scheme != "https") {
+        	return 301 https://$host$request_uri;
+   	} # managed by Certbot
+
+	location /sp-preyfe/ {
+                proxy_pass http://localhost:8081/;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+	location /sp-admin/ {
+                proxy_pass http://localhost:8082/;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+	location /sp-mw/ {
+                proxy_pass http://localhost:8083/;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+	location /sp-preyws/ {
+                proxy_pass http://localhost:8085/;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+}
